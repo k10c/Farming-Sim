@@ -94,6 +94,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\Inventory Scripts\ItemSO.cs" />
+    <Compile Include="Assets\Scripts\Inventory Scripts\InventorySlot.cs" />
+    <Compile Include="Assets\Scripts\Inventory Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\Inventory Scripts\InventoryItem.cs" />
+    <Compile Include="Assets\Scripts\Inventory Scripts\Demo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
