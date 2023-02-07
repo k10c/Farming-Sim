@@ -342,6 +342,7 @@
 "Assets/Scripts/FuelPlant.cs"
 "Assets/Scripts/PauseMenu.cs"
 "Assets/Scripts/PlantType.cs"
+"Assets/Scripts/PlayerMovement.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
