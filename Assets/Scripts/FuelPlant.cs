@@ -4,30 +4,26 @@ using UnityEngine;
 
 public class FuelPlant : PlantType
 {
+	// in each plant constructor: set how many minutes it should take to grow fully, its resource, and how much of that resource it provides on harvest
 	FuelPlant()
 	{
-		setCurrGrowth(0.0f);
-		setGrown(100.0f);
-		setResource(ResourceType.FUEL);
-		setResourceQuantity(5);
+		timeToGrow = 10;
+		SetResource(ResourceType.FUEL);
+		SetResourceQuantity(5);
 	}
 	override public void Awake()
 	{
 		sprite = GetComponent<SpriteRenderer>();
 		ShowGrowth();
-		Debug.Log(getDetails());
+		Debug.Log(GetDetails());
 	}
 	override public PlantType Clone()
 	{
-		return (PlantType)this.Clone();
+		return (FuelPlant)this.Clone();
 	}
-	override public void Harvest()
+
+	override public string GetDetails()
 	{
-		//drops flower seeds and fuel
-		//destroys plant
-	}
-	override public string getDetails()
-	{
-		return "This Fuel Flower is " + (getCurrGrowth() / getGrown() * 100) + "% grown.";
+		return "This Fuel Flower is " + growPercent.ToString() + "% grown.";
 	}
 }

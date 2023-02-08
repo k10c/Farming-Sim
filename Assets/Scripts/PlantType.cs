@@ -12,46 +12,57 @@ public enum ResourceType
 
 public abstract class PlantType : MonoBehaviour
 {
-	public float currGrowth;
-	public float grown;
 	public ResourceType resource; //To be replaced with the actual "item" version of the resources
 	public int resourceQuantity;
 	[HideInInspector]public SpriteRenderer sprite;
-	
-	public PlantType()
+
+    public int timeToGrow { get; set; }
+    public int timeGrown { get; set; }
+    public bool fullyGrown;
+	public float growPercent;
+
+    public PlantType()
 	{
-		currGrowth = 0.0f;
-		grown = 0.0f;
+		timeToGrow = 0;
+		timeGrown = 0;
+		fullyGrown = false;
+		growPercent = 0.0f;
 		resource = ResourceType.NONE;
 		resourceQuantity = 0;
 	}
 	
 	public abstract PlantType Clone();
-	
-	public void Update() //used for testing right now, can be removed once other interaction options available
-	{
-		
-	}
+
 	
 	public virtual void Awake()
 	{
 		sprite = GetComponent<SpriteRenderer>();
 	}
 	
-	public bool checkGrown()
+	public bool CheckIfGrown()
 	{
-		return currGrowth > grown;
+		return fullyGrown;
 	}
 	
 	public void ShowGrowth()
 	{
-		sprite.color = new Color(255 * (1 - currGrowth / grown),255 * (currGrowth / grown),0); //To be replaced with changing sprite as plant grows
+		sprite.color = new Color(255 * (1 - timeGrown / timeToGrow),255 * (timeGrown / timeToGrow),0); //To be replaced with changing sprite as plant grows
 	}
-	public float Grow(float growth)
+	public void UpdateGrowth()
 	{
-		currGrowth += growth;
-		ShowGrowth();
-		return currGrowth;
+		timeGrown++;
+
+		if(timeGrown >= timeToGrow)
+		{
+			fullyGrown= true;
+			growPercent = 100.0f;
+			// unsubscribe UpdateGrowth from minute changing
+		}
+		else
+		{
+            // calculate the new growth percentage
+            growPercent = ((float)timeGrown / (float)timeToGrow) * 100;
+        }
 	}
 	
 	public virtual void Harvest()
@@ -62,14 +73,14 @@ public abstract class PlantType : MonoBehaviour
 		*/
 	}
 	
-	public abstract string getDetails();
+	public abstract string GetDetails();
 	
-	public float getCurrGrowth() {return currGrowth;}
-	public float getGrown() {return grown;}
+	public float GetCurrGrowth() {return growPercent;}
+
+	// resource related methods: get/set resource, get/set quantity
+
 	public ResourceType getResource() {return resource;}
-	public int getResourceQuantity() {return resourceQuantity;}
-	public void setCurrGrowth(float newGrowth) {currGrowth = newGrowth;}
-	public void setGrown(float newGrown) {grown = newGrown;}
-	public void setResource(ResourceType newResource) {resource = newResource;}
-	public void setResourceQuantity(int newQuantity) {resourceQuantity = newQuantity;}
+	public int GetResourceQuantity() {return resourceQuantity;}
+	public void SetResource(ResourceType newResource) {resource = newResource;}
+	public void SetResourceQuantity(int newQuantity) {resourceQuantity = newQuantity;}	
 }
