@@ -8,10 +8,8 @@ public class ItemSO : ScriptableObject
 {
     public ItemType type;
 
-    [Header("Only UI")]
     public bool stackable = true;
 
-    [Header("Both")]
     public Sprite image;    
 
     public enum ItemType
@@ -21,9 +19,8 @@ public class ItemSO : ScriptableObject
         Tool
     }
 
-    public enum ActionType
+    /*public enum ActionType
     {
-        Action1,
-        Action2
-    }
+        
+    }*/
 }

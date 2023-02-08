@@ -7,6 +7,7 @@ public class InventoryManager : MonoBehaviour
     public int maxStackedItems = 4;
     public InventorySlot[] inventorySlots;
     [SerializeField] private GameObject inventoryItemPrefab;
+    [SerializeField] private GameObject mainInventory;
 
     public bool AddItem(ItemSO itemSO)
     {
@@ -40,5 +41,17 @@ public class InventoryManager : MonoBehaviour
         GameObject newItemGameObject = Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemGameObject.GetComponent<InventoryItem>();
         inventoryItem.InitializeItem(itemSO);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I) && !mainInventory.gameObject.activeSelf)
+        {
+            mainInventory.gameObject.SetActive(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.I) && mainInventory.gameObject.activeSelf)
+        {
+            mainInventory.gameObject.SetActive(false);
+        }
     }
 }
