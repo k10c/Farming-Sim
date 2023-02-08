@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Switches to the scene in the build with the given scene ID
    public void MoveToScene(int SceneID)
     {
         SceneManager.LoadScene(SceneID);
