@@ -7,7 +7,7 @@ public class FuelPlant : PlantType
 	// in each plant constructor: set how many minutes it should take to grow fully, its resource, and how much of that resource it provides on harvest
 	FuelPlant()
 	{
-		timeToGrow = 10;
+		timeToGrow = 20;
 		SetResource(ResourceType.FUEL);
 		SetResourceQuantity(5);
 	}
@@ -25,6 +25,7 @@ public class FuelPlant : PlantType
     override public void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
+		sprite.sprite = growArray[0];
         ShowGrowth();
         TimeManager.OnMinuteChanged += UpdateGrowth;
     }

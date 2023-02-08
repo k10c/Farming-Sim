@@ -14,6 +14,7 @@ public abstract class PlantType : MonoBehaviour
 {
 	public ResourceType resource; //To be replaced with the actual "item" version of the resources
 	public int resourceQuantity;
+	public Sprite[] growArray;
 	[HideInInspector]public SpriteRenderer sprite;
 
     public int timeToGrow { get; set; }
@@ -37,6 +38,7 @@ public abstract class PlantType : MonoBehaviour
 	public virtual void Awake()
 	{
 		sprite = GetComponent<SpriteRenderer>();
+		sprite.sprite = growArray[0];
 	}
 	
 	public bool CheckIfGrown()
@@ -46,15 +48,12 @@ public abstract class PlantType : MonoBehaviour
 	
 	public void ShowGrowth()
 	{
-		sprite.color = new Color(255 * (1 - timeGrown / timeToGrow),255 * (timeGrown / timeToGrow),0); //To be replaced with changing sprite as plant grows
-
+		sprite.sprite = growArray[(int)((float)(growArray.Length - 1) * growPercent / 100.0f)];
         Debug.Log(GetDetails());
     }
 	public void UpdateGrowth()
 	{
 		timeGrown++;
-		ShowGrowth();
-
 		if(timeGrown >= timeToGrow)
 		{
 			fullyGrown= true;
@@ -67,6 +66,7 @@ public abstract class PlantType : MonoBehaviour
             // calculate the new growth percentage
             growPercent = ((float)timeGrown / (float)timeToGrow) * 100;
         }
+		ShowGrowth();
 	}
 	
 	public virtual void Harvest()
