@@ -7,13 +7,9 @@ public class PlayerMovement : MonoBehaviour
     //speed of the player
     public float speed = 5.0f;
     //player goes left or right
-    public float jumpForce = 5f;
-    //checks if player is on ground
-    public bool isOnGround = true;
-    //player goes side to side
     private float horizontalInput;
-    //player goes forward and back
-    private float forwardInput;
+    //player goes up or down
+    private float verticalInput;
     //Rigid Body of the player
     private Rigidbody playerRb;
     
@@ -29,24 +25,14 @@ public class PlayerMovement : MonoBehaviour
     {
         //get player input
         horizontalInput = Input.GetAxis("Horizontal");
-        forwardInput = Input.GetAxis("Vertical");
+        verticalInput = Input.GetAxis("Vertical");
 
         //Make the player move forward
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        transform.Translate(Vector3.up * Time.deltaTime * speed * verticalInput);
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
-        
-        //player jump
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
-        {
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isOnGround = false;
-        }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isOnGround = true;
-        }
+		
     }
 }
