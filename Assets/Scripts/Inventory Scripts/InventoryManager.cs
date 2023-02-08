@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
 
     public bool AddItem(ItemSO itemSO)
     {
+
+        // Stacking logic for stackable items
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
@@ -23,6 +25,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
+        // Spawns 
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
@@ -36,6 +39,7 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    // Instantiates new items in empty inventory slot
     private void SpawnNewItem(ItemSO itemSO, InventorySlot slot)
     {
         GameObject newItemGameObject = Instantiate(inventoryItemPrefab, slot.transform);
@@ -43,6 +47,7 @@ public class InventoryManager : MonoBehaviour
         inventoryItem.InitializeItem(itemSO);
     }
 
+    // Open and close main inventory with I
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I) && !mainInventory.gameObject.activeSelf)

@@ -12,10 +12,11 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [SerializeField] private Image image;
     public TextMeshProUGUI countText;
 
-    [HideInInspector] public Transform parentAfterDrag;
+    [HideInInspector] public Transform parentBeforeDrag;
     [HideInInspector] public ItemSO item;
     [HideInInspector] public int count = 1;
 
+    // Displays how many items are stacked on each other in the inventory
     public void RefreshCount()
     {
         countText.text = count.ToString();
@@ -23,28 +24,31 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         countText.gameObject.SetActive(textActive);
     }
 
+    // Sets item sprite
     public void InitializeItem(ItemSO newItemSO)
     {
         item = newItemSO;
-        image.sprite = newItemSO.image;
+        image.sprite = newItemSO.image;     
         RefreshCount();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        image.raycastTarget = false;
-        parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root);
+        image.raycastTarget = false;    // Allows mouse to see behind object being dragged
+        parentBeforeDrag = transform.parent;    // The parent of the dragged item before being moved 
+        transform.SetParent(transform.root);    // Makes sure object appears infront of inventory UI
     }
 
+    // Moves object being dragged to wherever mouse is
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = Input.mousePosition;
     }
 
+    // Snaps object in inventory slot it is over or if not hover new slot the slot it came from
     public void OnEndDrag(PointerEventData eventData)
     {
         image.raycastTarget = true;
-        transform.SetParent(parentAfterDrag);
+        transform.SetParent(parentBeforeDrag);
     }
 }
