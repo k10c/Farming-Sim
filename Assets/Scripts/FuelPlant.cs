@@ -11,12 +11,7 @@ public class FuelPlant : PlantType
 		SetResource(ResourceType.FUEL);
 		SetResourceQuantity(5);
 	}
-	override public void Awake()
-	{
-		sprite = GetComponent<SpriteRenderer>();
-		ShowGrowth();
-		Debug.Log(GetDetails());
-	}
+
 	override public PlantType Clone()
 	{
 		return (FuelPlant)this.Clone();
@@ -26,4 +21,11 @@ public class FuelPlant : PlantType
 	{
 		return "This Fuel Flower is " + growPercent.ToString() + "% grown.";
 	}
+	
+    override public void Awake()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+        ShowGrowth();
+        TimeManager.OnMinuteChanged += UpdateGrowth;
+    }
 }

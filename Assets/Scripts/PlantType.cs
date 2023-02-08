@@ -47,17 +47,21 @@ public abstract class PlantType : MonoBehaviour
 	public void ShowGrowth()
 	{
 		sprite.color = new Color(255 * (1 - timeGrown / timeToGrow),255 * (timeGrown / timeToGrow),0); //To be replaced with changing sprite as plant grows
-	}
+
+        Debug.Log(GetDetails());
+    }
 	public void UpdateGrowth()
 	{
 		timeGrown++;
+		ShowGrowth();
 
 		if(timeGrown >= timeToGrow)
 		{
 			fullyGrown= true;
 			growPercent = 100.0f;
-			// unsubscribe UpdateGrowth from minute changing
-		}
+            // unsubscribe UpdateGrowth from minute changing
+            TimeManager.OnMinuteChanged -= UpdateGrowth;
+        }
 		else
 		{
             // calculate the new growth percentage
@@ -82,5 +86,6 @@ public abstract class PlantType : MonoBehaviour
 	public ResourceType getResource() {return resource;}
 	public int GetResourceQuantity() {return resourceQuantity;}
 	public void SetResource(ResourceType newResource) {resource = newResource;}
-	public void SetResourceQuantity(int newQuantity) {resourceQuantity = newQuantity;}	
+	public void SetResourceQuantity(int newQuantity) {resourceQuantity = newQuantity;}
+
 }
