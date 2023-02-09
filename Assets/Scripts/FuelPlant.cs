@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Written by: Ben
+
 public class FuelPlant : PlantType
 {
 	// in each plant constructor: set how many minutes it should take to grow fully, its resource, and how much of that resource it provides on harvest
@@ -21,12 +23,5 @@ public class FuelPlant : PlantType
 	{
 		return "This Fuel Flower is " + growPercent.ToString() + "% grown.";
 	}
-	
-    override public void Awake()
-    {
-        sprite = GetComponent<SpriteRenderer>();
-		sprite.sprite = growArray[0];
-        ShowGrowth();
-        TimeManager.OnMinuteChanged += UpdateGrowth;
-    }
+
 }

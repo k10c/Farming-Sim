@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Original class by: Ben
+// Observer pattern update by: Aidan
+
 public enum ResourceType
 {
 	FUEL,
@@ -17,8 +20,9 @@ public abstract class PlantType : MonoBehaviour
 	public Sprite[] growArray;
 	[HideInInspector]public SpriteRenderer sprite;
 
-    public int timeToGrow { get; set; }
-    public int timeGrown { get; set; }
+	// for code review: these are currently not private for convenience but could be made so if necessary
+	public int timeToGrow;
+	public int timeGrown;
     public bool fullyGrown;
 	public float growPercent;
 
@@ -37,20 +41,26 @@ public abstract class PlantType : MonoBehaviour
 	
 	public virtual void Awake()
 	{
-		sprite = GetComponent<SpriteRenderer>();
-		sprite.sprite = growArray[0];
-	}
+        sprite = GetComponent<SpriteRenderer>();
+        sprite.sprite = growArray[0];
+        ShowGrowth();
+        TimeManager.OnMinuteChanged += UpdateGrowth;
+    }
 	
+	// method to return if plant is fully grown
 	public bool CheckIfGrown()
 	{
 		return fullyGrown;
 	}
 	
+	// changes the sprite to show how close it is to fully grown
 	public void ShowGrowth()
 	{
 		sprite.sprite = growArray[(int)((float)(growArray.Length - 1) * growPercent / 100.0f)];
         Debug.Log(GetDetails());
     }
+
+	// called every in game minute
 	public void UpdateGrowth()
 	{
 		timeGrown++;

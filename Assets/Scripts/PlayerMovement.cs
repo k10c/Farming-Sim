@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// By Katen
+
 public class PlayerMovement : MonoBehaviour
 {
     //speed of the player

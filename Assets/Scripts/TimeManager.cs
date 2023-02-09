@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+// Written By: Aidan
+
 public class TimeManager : MonoBehaviour
 {
     // new actions for planned interaction with listeners(observers)

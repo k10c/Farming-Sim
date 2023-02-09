@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// WRITTEN BY: Aidan 
+
 public class ChangeScene : MonoBehaviour
 {
     // Switches to the scene in the build with the given scene ID
