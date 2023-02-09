@@ -4,7 +4,7 @@ HOW TO PLAY:
 
 REQUIREMENTS CHECKLIST:
 
-x = we have this
+x = we have this/have started this
 
  General Requirements:
 
@@ -26,18 +26,18 @@ Data model makes uses of at least one or more of the following; Inheritance, Int
 
 UI Requirement:
 
-There must be an in game UI that displays information about the objects. 
+There must be an in game UI that displays information about the objects. x - inventory system
 
-From the UI display it should be clear that the objects have different properties and uses.
+From the UI display it should be clear that the objects have different properties and uses. x - sprites and item names (in progress)
 
 UI that displays the players progress towards some goal. x - repair progress 
  
 
 Single Player Interaction
 
-There must the start of a singleplayer game loop. 
+There must the start of a singleplayer game loop. x - can move and watch plants grow, next step is interaction and use of materials
 
-There should be some goal that the player is working toward. 
+There should be some goal that the player is working toward. x - progress bar represents ship repair
 
 The game does not have to have a win or lose state yet. x
 
