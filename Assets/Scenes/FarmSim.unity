@@ -1568,7 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ae896e0f680cd4a8780c2181bfc0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   sprites:
   - {fileID: 1019283356, guid: 0f60263d2d4d13b4bb1ba48541ddfed9, type: 3}
   - {fileID: -1857133268, guid: 0f60263d2d4d13b4bb1ba48541ddfed9, type: 3}
@@ -1591,9 +1591,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1001 &861506836
 PrefabInstance:
