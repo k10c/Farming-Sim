@@ -49,6 +49,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         image.raycastTarget = true;
+		if(item.Plant(transform.position, transform.rotation))
+		{
+			count--;
+			if(count < 1)
+				Destroy(gameObject);
+			RefreshCount();
+		}
         transform.SetParent(parentBeforeDrag);
     }
 }

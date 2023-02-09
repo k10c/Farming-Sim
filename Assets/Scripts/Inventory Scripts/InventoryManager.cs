@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public int maxStackedItems = 4;
+    public int maxStackedItems;
     public InventorySlot[] inventorySlots;
     [SerializeField] private GameObject inventoryItemPrefab;
     [SerializeField] private GameObject mainInventory;

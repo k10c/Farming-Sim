@@ -18,9 +18,23 @@ public class ItemSO : ScriptableObject
         Seed,
         Tool
     }
-
+	
+	public GameObject plant;
+	
     /*public enum ActionType
     {
         
     }*/
+	
+	public bool Plant(Vector3 pos, Quaternion rot)
+	{
+		pos = Camera.main.ScreenToWorldPoint(pos);
+		if(type == ItemType.Seed)
+		{
+			Instantiate(plant, new Vector3(pos.x,pos.y,0), rot);
+			return true;
+		}
+		else
+			return false;
+	}
 }

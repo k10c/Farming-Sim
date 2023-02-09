@@ -1,24 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 // Original class by: Ben
 // Observer pattern update by: Aidan
 
-public enum ResourceType
+public abstract class PlantType : MonoBehaviour, IPointerDownHandler
 {
-	FUEL,
-	TITANIUM,
-	SCREWS,
-	NONE
-}
-
-public abstract class PlantType : MonoBehaviour
-{
-	public ResourceType resource; //To be replaced with the actual "item" version of the resources
-	public int resourceQuantity;
+	public ItemSO[] resources;
+	public int[] resQuants;
 	public Sprite[] growArray;
 	[HideInInspector]public SpriteRenderer sprite;
+	[HideInInspector]public InventoryManager inventory;
 
 	// for code review: these are currently not private for convenience but could be made so if necessary
 	public int timeToGrow;
@@ -26,25 +20,39 @@ public abstract class PlantType : MonoBehaviour
     public bool fullyGrown;
 	public float growPercent;
 
-    public PlantType()
-	{
-		timeToGrow = 0;
-		timeGrown = 0;
-		fullyGrown = false;
-		growPercent = 0.0f;
-		resource = ResourceType.NONE;
-		resourceQuantity = 0;
-	}
+    public PlantType(){	}
 	
 	public abstract PlantType Clone();
 
 	
 	public virtual void Awake()
 	{
+		AddPhysics2DRaycaster();
         sprite = GetComponent<SpriteRenderer>();
+		inventory = FindObjectOfType<InventoryManager>();
         sprite.sprite = growArray[0];
         ShowGrowth();
         TimeManager.OnMinuteChanged += UpdateGrowth;
+    }
+	
+	//detects when the plant is clicked
+	public void OnPointerDown(PointerEventData eventData)
+    {
+		Debug.Log(GetDetails());
+		if(fullyGrown)
+		{
+			Harvest();
+		}
+    }
+	
+	//determines whether a raycaster has already been created (ensures it is only loaded once)
+    private void AddPhysics2DRaycaster()
+    {
+        Physics2DRaycaster physicsRaycaster = FindObjectOfType<Physics2DRaycaster>();
+        if (physicsRaycaster == null)
+        {
+            Camera.main.gameObject.AddComponent<Physics2DRaycaster>();
+        }
     }
 	
 	// method to return if plant is fully grown
@@ -57,7 +65,6 @@ public abstract class PlantType : MonoBehaviour
 	public void ShowGrowth()
 	{
 		sprite.sprite = growArray[(int)((float)(growArray.Length - 1) * growPercent / 100.0f)];
-        Debug.Log(GetDetails());
     }
 
 	// called every in game minute
@@ -81,21 +88,16 @@ public abstract class PlantType : MonoBehaviour
 	
 	public virtual void Harvest()
 	{
-		/*
-		Drops / adds items (resource, resource quantity) to inventory
-		Destroys plant / resets progress a certain ammount, depending on plant type
-		*/
+		for(int res = 0; res < resources.Length; res++)
+		{
+			for(int quant = Random.Range(0, resQuants[res]); quant < resQuants[res]; quant++)
+			{
+				inventory.AddItem(resources[res]);
+			}
+		}
 	}
 	
 	public abstract string GetDetails();
 	
 	public float GetCurrGrowth() {return growPercent;}
-
-	// resource related methods: get/set resource, get/set quantity
-
-	public ResourceType getResource() {return resource;}
-	public int GetResourceQuantity() {return resourceQuantity;}
-	public void SetResource(ResourceType newResource) {resource = newResource;}
-	public void SetResourceQuantity(int newQuantity) {resourceQuantity = newQuantity;}
-
 }
