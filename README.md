@@ -43,6 +43,8 @@ The game does not have to have a win or lose state yet. x
 
 CREDITS:
 
-All scripts in UI Scripts folder by Aidan\n
+All scripts in UI Scripts folder by Aidan
+
 All scripts in Inventory Scripts folder by Jose
-all other scripts authored as listen in comments
+
+All other scripts authored as listen in comments
