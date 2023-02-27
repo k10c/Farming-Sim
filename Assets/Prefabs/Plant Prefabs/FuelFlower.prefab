@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources:
-  - {fileID: 11400000, guid: 896fed8f2428fe941b98ca45da08f860, type: 2}
-  - {fileID: 11400000, guid: 0167e08ab47066d44a7b801e46d997e5, type: 2}
+  - {fileID: 11400000, guid: 61b84104fecc5804fbce8a9b0f61cd4c, type: 2}
+  - {fileID: 11400000, guid: cc63c4b572efb9a4e970da887dd4e67d, type: 2}
   resQuants: 0300000002000000
   growArray:
   - {fileID: 497225480, guid: 80cd22253ce5e77439cd08984f534b41, type: 3}
