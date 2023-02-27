@@ -1106,7 +1106,6 @@ GameObject:
   m_Component:
   - component: {fileID: 704879531}
   - component: {fileID: 704879530}
-  - component: {fileID: 704879532}
   - component: {fileID: 704879533}
   m_Layer: 0
   m_Name: Background
@@ -1182,18 +1181,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &704879532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704879529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &704879533
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5343,7 +5330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRemaining: {fileID: 1752805666}
-  hoursWorthOfRations: 0
+  hoursWorthOfRations: 10
 --- !u!1001 &1755540042
 PrefabInstance:
   m_ObjectHideFlags: 0

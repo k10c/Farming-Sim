@@ -56,7 +56,9 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\ChangeScene.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\TimeUI.cs" />
     <Compile Include="Assets\Scripts\Bots\HarvestBot.cs" />
     <Compile Include="Assets\Scripts\Inventory Scripts\Demo.cs" />
     <Compile Include="Assets\Scripts\Inventory Scripts\InventorySlot.cs" />
@@ -68,13 +70,12 @@
     <Compile Include="Assets\Scripts\TimeManager.cs" />
     <Compile Include="Assets\Scripts\Inventory Scripts\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Inventory Scripts\ItemSO.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Plants\PlantType.cs" />
     <Compile Include="Assets\Scripts\Plants\GlassGrass.cs" />
-    <Compile Include="Assets\Scripts\Plants\TitaniumTree.cs" />
-    <Compile Include="Assets\Scripts\UI Scripts\ChangeScene.cs" />
-    <Compile Include="Assets\Scripts\UI Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\UI Scripts\TimeUI.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\QuitGame.cs" />
+    <Compile Include="Assets\Scripts\Plants\TitaniumTree.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\Interact.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

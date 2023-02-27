@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class TimeUI : MonoBehaviour
 {
-    public TextMeshProUGUI timeRemaining;
+    [SerializeField]
+    private TextMeshProUGUI timeRemaining;
     [SerializeField]
     private int hoursWorthOfRations;
     private int hoursRemaining;

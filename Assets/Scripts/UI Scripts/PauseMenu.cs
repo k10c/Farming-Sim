@@ -6,9 +6,10 @@ public class PauseMenu : MonoBehaviour
 {
     
     // variable to keep track of whether or not the game is paused; default false
-    public static bool GameIsPaused = false;
+    private static bool GameIsPaused = false;
     // 
-    public GameObject pauseMenuUI;
+    [SerializeField]
+    private GameObject pauseMenuUI;
 
     // Update is called once per frame
     void Update()

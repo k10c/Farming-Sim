@@ -64,7 +64,10 @@ public abstract class PlantType : MonoBehaviour, IPointerDownHandler
 	// changes the sprite to show how close it is to fully grown
 	public void ShowGrowth()
 	{
-		sprite.sprite = growArray[(int)((float)(growArray.Length - 1) * growPercent / 100.0f)];
+		if(sprite != null)
+		{
+            sprite.sprite = growArray[(int)((float)(growArray.Length - 1) * growPercent / 100.0f)];
+        }
     }
 
 	// called every in game minute
