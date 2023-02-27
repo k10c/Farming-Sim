@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7324e939340e4b7449afaefd04bfb918, type: 3}
-  m_Name: Fuel
+  m_Name: TitaniumTreeSappling
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   stackable: 1
-  image: {fileID: -169246314, guid: c9835d4db38e8f4478f3127b4783d9b9, type: 3}
-  plant: {fileID: 0}
+  image: {fileID: -1020393650, guid: ba410322fc69f514bab6f933d90ed28c, type: 3}
+  plant: {fileID: 6553740543653610043, guid: 0289e52b7b8f5ba438ef9b1d11f85dfb, type: 3}

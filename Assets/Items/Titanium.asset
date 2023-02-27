@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7324e939340e4b7449afaefd04bfb918, type: 3}
-  m_Name: Fuel
+  m_Name: Titanium
   m_EditorClassIdentifier: 
   type: 0
   stackable: 1
-  image: {fileID: -169246314, guid: c9835d4db38e8f4478f3127b4783d9b9, type: 3}
+  image: {fileID: -1433216815, guid: 7d7ec3ca5c4030f4cbfd9c6e86a315ce, type: 3}
   plant: {fileID: 0}
