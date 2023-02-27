@@ -27,6 +27,7 @@ public class TimeManager : MonoBehaviour
         Minute = 0;
         Hour = 0;
         timer = minuteToRealTime;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame

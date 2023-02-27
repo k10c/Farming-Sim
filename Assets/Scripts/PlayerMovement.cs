@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// By Katen
+// By Katen + Jose
 
 public class PlayerMovement : MonoBehaviour
 {
