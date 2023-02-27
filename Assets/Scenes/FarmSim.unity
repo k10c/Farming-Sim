@@ -5342,6 +5342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5732dc27495f224c9bc8eed5cb1fce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeRemaining: {fileID: 1752805666}
+  hoursWorthOfRations: 0
 --- !u!1001 &1755540042
 PrefabInstance:
   m_ObjectHideFlags: 0
