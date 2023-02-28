@@ -4346,22 +4346,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c882b013af76d4ea34e6f9344e9e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInRange: 0
   interactKey: 101
-  interactEvent:
+  interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1867178662}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1867178666}
+        m_TargetAssemblyTypeName: RepairMenu, Assembly-CSharp
+        m_MethodName: toggle
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!61 &1354283361
 BoxCollider2D:
@@ -5969,6 +5968,7 @@ GameObject:
   - component: {fileID: 1867178663}
   - component: {fileID: 1867178665}
   - component: {fileID: 1867178664}
+  - component: {fileID: 1867178666}
   m_Layer: 5
   m_Name: Repairs
   m_TagString: Untagged
@@ -5983,7 +5983,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867178662}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5995,7 +5995,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1122.571, y: -112.01}
+  m_SizeDelta: {x: -1122.571, y: -112.01001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1867178664
 MonoBehaviour:
@@ -6035,6 +6035,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867178662}
   m_CullTransparentMesh: 1
+--- !u!114 &1867178666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867178662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9ebc9ca2d31f54a8355c1bd01f4899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 1867178662}
 --- !u!224 &1885093362 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3360180382892064507, guid: 025a5944951a7b940b0ae82648eabb0b, type: 3}

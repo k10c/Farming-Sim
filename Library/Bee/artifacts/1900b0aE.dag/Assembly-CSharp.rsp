@@ -386,6 +386,7 @@
 "Assets/Scripts/UI Scripts/ChangeScene.cs"
 "Assets/Scripts/UI Scripts/PauseMenu.cs"
 "Assets/Scripts/UI Scripts/QuitGame.cs"
+"Assets/Scripts/UI Scripts/RepairMenu.cs"
 "Assets/Scripts/UI Scripts/TimeUI.cs"
 -langversion:9.0
 

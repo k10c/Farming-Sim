@@ -1,21 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+// Written by Aidan
+
 public class Interactable : MonoBehaviour
 
 {
-    // for multiplayer: 2x inRange bools, 2x interactKeys? seems bad, maybe this should be attached to player prefab
-    [SerializeField] private bool isInRange;
     [SerializeField] private KeyCode interactKey;
-    [SerializeField] private UnityEvent interactEvent;
+    [SerializeField] private UnityEvent<GameObject> interaction;
+
+    private bool isInRange = false;
+    private GameObject whichPlayer;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -24,7 +23,7 @@ public class Interactable : MonoBehaviour
         {
             if(Input.GetKeyDown(interactKey))
             {
-                interactEvent.Invoke();
+                interaction.Invoke(whichPlayer);
             }
         }
     }
@@ -34,6 +33,7 @@ public class Interactable : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
+            whichPlayer = collision.gameObject;
         }
     }
 
