@@ -368,6 +368,7 @@ MonoBehaviour:
   requiredQuantity: 10
   icon: {fileID: 7875508822072742122}
   description: {fileID: 7875508821641210049}
+  completeButton: {fileID: 7875508822294084090}
 --- !u!1 &7875508822072742120
 GameObject:
   m_ObjectHideFlags: 0

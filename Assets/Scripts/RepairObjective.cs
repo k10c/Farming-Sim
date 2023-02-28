@@ -21,6 +21,8 @@ public class RepairObjective : MonoBehaviour
     private Image icon;
     [SerializeField]
     private TextMeshProUGUI description;
+    [SerializeField]
+    private GameObject completeButton;
 
     private int objectiveID;
 
@@ -38,6 +40,17 @@ public class RepairObjective : MonoBehaviour
     public int getRequiredQuantity()
     {
         return requiredQuantity;
+    }
+
+    public void setID(int id)
+    {
+        objectiveID = id;
+    }
+
+    public void complete()
+    {
+        description.text = "complete";
+        completeButton.SetActive(false);
     }
 
     

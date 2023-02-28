@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,7 @@ public class RepairMenu : MonoBehaviour
         for (int i = 0; i < objectives.Length; i++)
         {
             objectives[i].attemptToComplete += attemptToComplete;
+            objectives[i].setID(i);
         }
     }
 
@@ -50,7 +52,10 @@ public class RepairMenu : MonoBehaviour
     private void updateProgress()
     {
         numCompleteObjectives++;
-        progressBar.value = numCompleteObjectives/objectives.Length;
+        progressBar.value = ((float)numCompleteObjectives/(float)objectives.Length);
+
+        Debug.Log(progressBar.value);
+
         if(progressBar.value == 1.0f )
         {
             win();
@@ -61,10 +66,10 @@ public class RepairMenu : MonoBehaviour
     {
         int amountReqd = objectives[objectiveID].getRequiredQuantity();
         
-        // waiting on new inventory to do the checking part
-        if(true )
+        // waiting on new inventory to do the checking part, use currPlayer
+        if(true)
         {
-            objectives[objectiveID].enabled = false;
+            objectives[objectiveID].complete();
             updateProgress();
         } 
     }
