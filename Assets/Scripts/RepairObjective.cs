@@ -11,15 +11,18 @@ using Unity.VisualScripting;
 public class RepairObjective : MonoBehaviour
 {
     [SerializeField]
+    public Action<int> attemptToComplete;
+
+    [SerializeField]
     private ItemSO resource;
     [SerializeField]
     private int requiredQuantity;
     [SerializeField]
-    public Action onObjectiveComplete;
-    [SerializeField]
     private Image icon;
     [SerializeField]
     private TextMeshProUGUI description;
+
+    private int objectiveID;
 
     void Start()
     {
@@ -27,9 +30,16 @@ public class RepairObjective : MonoBehaviour
         description.text = "Need " + requiredQuantity.ToString();
     }
 
-    private void completeObjective()
+    public void onClick()
     {
-        onObjectiveComplete.Invoke();
+        attemptToComplete.Invoke(objectiveID);
     }
+
+    public int getRequiredQuantity()
+    {
+        return requiredQuantity;
+    }
+
+    
 
 }

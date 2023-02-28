@@ -17,13 +17,14 @@ public class RepairMenu : MonoBehaviour
 
     private bool isOpen = false;
     private int numCompleteObjectives = 0;
+    private GameObject currPlayer;
 
     // Start is called before the first frame update
     private void Start()
     {
         for (int i = 0; i < objectives.Length; i++)
         {
-            objectives[i].onObjectiveComplete += updateProgress;
+            objectives[i].attemptToComplete += attemptToComplete;
         }
     }
 
@@ -34,6 +35,7 @@ public class RepairMenu : MonoBehaviour
         {
             menu.SetActive(true);
             player.GetComponent<PlayerMovement>().enabled = false;
+            currPlayer = player;
             isOpen = true;
         }
         else
@@ -53,6 +55,18 @@ public class RepairMenu : MonoBehaviour
         {
             win();
         }
+    }
+
+    private void attemptToComplete(int objectiveID)
+    {
+        int amountReqd = objectives[objectiveID].getRequiredQuantity();
+        
+        // waiting on new inventory to do the checking part
+        if(true )
+        {
+            objectives[objectiveID].enabled = false;
+            updateProgress();
+        } 
     }
 
     private void win()
