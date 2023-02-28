@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FarmSim.unity
     guid: 1cd9b12c20e972047b67cfa63324d930
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 8a92001aa13e49948b9fffd5d08c0954
+  - enabled: 1
+    path: Assets/Scenes/Loss.unity
+    guid: c7260801aa86cf84588e57f7080ab83f
   m_configObjects: {}

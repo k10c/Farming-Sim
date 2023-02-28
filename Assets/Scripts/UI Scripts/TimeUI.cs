@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Aidan
 
@@ -27,7 +28,8 @@ public class TimeUI : MonoBehaviour
         hoursRemaining--;
         timeRemaining.text = $"Hours remaining: {hoursRemaining.ToString()}";
         if (hoursRemaining == 0){
-            // end the game, move to loss screen
+            Time.timeScale = 0.0f;
+            SceneManager.LoadScene("Loss");
         }
     }
 }

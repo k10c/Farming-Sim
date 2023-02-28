@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\UI Scripts\TimeUI.cs" />
     <Compile Include="Assets\Scripts\Bots\HarvestBot.cs" />
     <Compile Include="Assets\Scripts\Inventory Scripts\Demo.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\RepairMenu.cs" />
     <Compile Include="Assets\Scripts\Inventory Scripts\InventorySlot.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />
     <Compile Include="Assets\Scripts\Plants\ScrewShrub.cs" />
@@ -76,7 +77,7 @@
     <Compile Include="Assets\Scripts\Plants\GlassGrass.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\QuitGame.cs" />
     <Compile Include="Assets\Scripts\Plants\TitaniumTree.cs" />
-    <Compile Include="Assets\Scripts\UI Scripts\RepairMenu.cs" />
+    <Compile Include="Assets\Scripts\RepairObjective.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

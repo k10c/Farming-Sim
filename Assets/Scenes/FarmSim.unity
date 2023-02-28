@@ -2037,6 +2037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cffe16be4ebfb0845b9ccb66c3e18374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minuteToRealTime: 0.25
 --- !u!4 &895904836
 Transform:
   m_ObjectHideFlags: 0
@@ -6048,6 +6049,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1867178662}
+  objectives: []
+  progressBar: {fileID: 2130451188}
 --- !u!224 &1885093362 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3360180382892064507, guid: 025a5944951a7b940b0ae82648eabb0b, type: 3}

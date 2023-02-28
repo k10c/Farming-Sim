@@ -15,9 +15,8 @@ public class TimeManager : MonoBehaviour
     public static int Minute { get; private set; }
     // current hour
     public static int Hour { get; private set; }
-   
-    // may add days for tracking deadline (possible win con)
 
+    [SerializeField]
     private float minuteToRealTime = 0.5f;
     private float timer;
 
