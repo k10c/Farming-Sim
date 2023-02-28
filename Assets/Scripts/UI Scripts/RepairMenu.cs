@@ -49,7 +49,7 @@ public class RepairMenu : MonoBehaviour
     {
         numCompleteObjectives++;
         progressBar.value = numCompleteObjectives/objectives.Length;
-        if(progressBar.value == 100f )
+        if(progressBar.value == 1.0f )
         {
             win();
         }
