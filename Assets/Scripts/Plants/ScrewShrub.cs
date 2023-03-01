@@ -18,13 +18,14 @@ public class ScrewShrub : PlantType
 		return "This Screw Shrub is " + growPercent.ToString() + "% grown.";
 	}
 	
-	override public void Harvest()
+	override public InvPacker Harvest()
 	{
-		base.Harvest();
+		InvPacker inv = base.Harvest();
 		timeGrown = (int)(timeToGrow * 0.25);
 		growPercent = 25.0f;
 		fullyGrown = false;
 		ShowGrowth();
 		TimeManager.OnMinuteChanged += UpdateGrowth;
+		return inv;
 	}
 }

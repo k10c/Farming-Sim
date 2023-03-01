@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
     //speed of the player
     public float speed;
     //player goes left or right
+	[SerializeField] private string upButton = "w";
+	[SerializeField] private string leftButton = "a";
+	[SerializeField] private string downButton = "s";
+	[SerializeField] private string rightButton = "d";
     private float horizontalInput;
     //player goes up or down
     private float verticalInput;
@@ -29,19 +33,31 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //get player input
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-		
-		//sets the sprite of the player
-		if(verticalInput > 0)
-			direction = 2;
-		else
-			direction = 0;
-		if(horizontalInput > 0)
-			direction = 3;
-		else if(horizontalInput < 0)
+        //get player input, set sprite
+        if(Input.GetKey(leftButton) && !Input.GetKey(rightButton))
+		{
+			horizontalInput = -1;
 			direction = 1;
+		}
+		else if(Input.GetKey(rightButton) && !Input.GetKey(leftButton))
+		{
+			horizontalInput = 1;
+			direction = 3;
+		}
+		else
+			horizontalInput = 0;
+		if(Input.GetKey(upButton) && !Input.GetKey(downButton))
+		{
+			verticalInput = 1;
+			direction = 2;
+		}
+		else if(Input.GetKey(downButton) && !Input.GetKey(upButton))
+		{
+			verticalInput = -1;
+			direction = 0;
+		}
+			else verticalInput = 0;
+		
 		GetComponent<SpriteRenderer>().sprite = sprites[direction];
 		
         //Make the player move forward

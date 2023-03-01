@@ -18,9 +18,10 @@ public class GlassGrass : PlantType
 		return "This Glass Grass is " + growPercent.ToString() + "% grown.";
 	}
 	
-	override public void Harvest()
+	override public InvPacker Harvest()
 	{
-		base.Harvest();
+		InvPacker inv = base.Harvest();
 		Destroy(gameObject);
+		return inv;
 	}
 }

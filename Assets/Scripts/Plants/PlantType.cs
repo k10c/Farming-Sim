@@ -10,9 +10,9 @@ public abstract class PlantType : MonoBehaviour, IPointerDownHandler
 {
 	public ItemSO[] resources;
 	public int[] resQuants;
+	public InvPacker inventory;
 	public Sprite[] growArray;
 	[HideInInspector]public SpriteRenderer sprite;
-	[HideInInspector]public InventoryManager inventory;
 
 	// for code review: these are currently not private for convenience but could be made so if necessary
 	public int timeToGrow;
@@ -29,7 +29,7 @@ public abstract class PlantType : MonoBehaviour, IPointerDownHandler
 	{
 		AddPhysics2DRaycaster();
         sprite = GetComponent<SpriteRenderer>();
-		inventory = FindObjectOfType<InventoryManager>();
+		inventory = new InvPacker(resources);
         sprite.sprite = growArray[0];
         ShowGrowth();
         TimeManager.OnMinuteChanged += UpdateGrowth;
@@ -89,15 +89,18 @@ public abstract class PlantType : MonoBehaviour, IPointerDownHandler
 		ShowGrowth();
 	}
 	
-	public virtual void Harvest()
+	public virtual InvPacker Harvest()
 	{
-		for(int res = 0; res < resources.Length; res++)
+		//sets the ammount of each resource in inventory to a random number based on their respective resQuants
+		int[] cropYield = new int[resQuants.Length];
+		for(int quant = 0; quant < resQuants.Length; quant++)
 		{
-			for(int quant = Random.Range(0, resQuants[res]); quant < resQuants[res]; quant++)
-			{
-				inventory.AddItem(resources[res]);
-			}
+			cropYield[quant] = Random.Range(1, resQuants[quant]);
 		}
+		inventory.SetInvCount(cropYield);
+		Debug.Log(inventory.GetDetails());
+		//sends inventory to whatever harvested the plant
+		return inventory;
 	}
 	
 	public abstract string GetDetails();
