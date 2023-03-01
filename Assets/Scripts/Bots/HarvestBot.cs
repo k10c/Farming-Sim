@@ -17,13 +17,15 @@ public class HarvestBot : RoboType
 	{
 		if(target.CheckIfGrown())
 		{
-			target.Harvest();
+			inventory.AddInv(target.Harvest());
+			Debug.Log("BOT: " + inventory.GetDetails());
 		}
 	}
 	
 	override public void Collect()
 	{
-		
+		Debug.Log(GetDetails());
+		inventory.PassToInv(playerInv);
 	}
 
 	override public string GetDetails()

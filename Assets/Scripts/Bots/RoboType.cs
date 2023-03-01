@@ -12,9 +12,10 @@ public abstract class RoboType : MonoBehaviour, IPointerDownHandler
 	[HideInInspector]public int[] resQuants; //the number of each resource (automatically initiated to 0)
 	public Sprite[] spriteArr; //the sprites the object will change between
 	[HideInInspector]public SpriteRenderer sprite; //the sprite component of the robot
-	[HideInInspector]public InventoryManager inventory; //the player's inventory object (to deposit resources in)
-	public Vector3 wanderDir; //for wandering
-	public float wanderRad; //for wandering
+	public InventoryManager playerInv;//TEMP
+	public InvPacker inventory; //the bot's inventory
+	
+
 	public float speed; //the speed of the robot
 	public GameObject background; //Sets the object to later find the bounds of, to limit the robot's movement
 	[HideInInspector]public BoxCollider2D brBounds; //The bounds of the game object above
@@ -32,7 +33,8 @@ public abstract class RoboType : MonoBehaviour, IPointerDownHandler
 	{
 		AddPhysics2DRaycaster();
         sprite = GetComponent<SpriteRenderer>();
-		inventory = FindObjectOfType<InventoryManager>();
+		inventory = new InvPacker();
+		playerInv = FindObjectOfType<InventoryManager>();//TEMP
 		resQuants = new int[resources.Length];
         sprite.sprite = spriteArr[0];
 		target = null;
@@ -103,11 +105,9 @@ public abstract class RoboType : MonoBehaviour, IPointerDownHandler
 		{
 			destination = this.transform.position;
 			if(target != null)
-			{
 				Interact();
-				target = null;
-				cooldown = false;
-			}
+			target = null;
+			cooldown = false;
 		}
 	}
 	
