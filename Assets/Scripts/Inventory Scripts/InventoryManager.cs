@@ -10,21 +10,22 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject mainInventory;
 
     private int selectedSlot = -1;
+    int newSelection = 0;
 
     private void Start()
     {
         ChangeSelectedSlot(0);
     }
 
-    private void ChangeSelectedSlot(int newValue)
+    private void ChangeSelectedSlot(int newSelectedSlot)
     {
         if (selectedSlot >= 0)
         {
             inventorySlots[selectedSlot].Deselected();
         }
 
-        inventorySlots[newValue].Selected();
-        selectedSlot = newValue;
+        inventorySlots[newSelectedSlot].Selected();
+        selectedSlot = newSelectedSlot;
     }
 
     public bool AddItem(ItemSO itemSO)
@@ -65,6 +66,7 @@ public class InventoryManager : MonoBehaviour
         inventoryItem.InitializeItem(itemSO);
     }
 
+    // Returns the item corresponding to the slot you are in. The slots go from 0 - 7
     public ItemSO GetSelectedItem(bool use)
     {
         InventorySlot slot = inventorySlots[selectedSlot];
@@ -102,12 +104,21 @@ public class InventoryManager : MonoBehaviour
             mainInventory.gameObject.SetActive(false);
         }
 
-        if (Input.inputString != null)
+        
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number < 9)
+            if (newSelection < 7)
             {
-                ChangeSelectedSlot(number - 1);
+                newSelection++;
+                ChangeSelectedSlot(newSelection);
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if(newSelection > 0)
+            {
+                newSelection--;
+                ChangeSelectedSlot(newSelection);
             }
         }
     }

@@ -19,6 +19,7 @@ public class RepairMenu : MonoBehaviour
     private bool isOpen = false;
     private int numCompleteObjectives = 0;
     private GameObject currPlayer;
+    private InventoryManager inventory;
 
     // Start is called before the first frame update
     private void Start()
@@ -28,8 +29,8 @@ public class RepairMenu : MonoBehaviour
             objectives[i].attemptToComplete += attemptToComplete;
             objectives[i].setID(i);
         }
+        inventory = FindObjectOfType<InventoryManager>();
     }
-
 
     public void toggle(GameObject player)
     {
@@ -65,8 +66,14 @@ public class RepairMenu : MonoBehaviour
     private void attemptToComplete(int objectiveID)
     {
         int amountReqd = objectives[objectiveID].getRequiredQuantity();
-        
+
         // waiting on new inventory to do the checking part, use currPlayer
+        for (int i = 0; i < amountReqd; i++)
+        {
+            inventory.GetSelectedItem(true);
+        }
+
+
         if(true)
         {
             objectives[objectiveID].complete();
