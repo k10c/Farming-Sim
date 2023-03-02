@@ -45,8 +45,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 3}
   m_SpriteTilingProperty:
@@ -150,6 +150,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a549e0a36435214f8a970725e2d5568, type: 2}
   - {fileID: 11400000, guid: 7c8caf4feba99b24b870acac9d9f187e, type: 2}
   resQuants: 0100000003000000
+  inventory: {fileID: 0}
   growArray:
   - {fileID: 1523863829, guid: 53e9db9a84df88747bd56c4896b49151, type: 3}
   - {fileID: -792238664, guid: 53e9db9a84df88747bd56c4896b49151, type: 3}
@@ -160,7 +161,6 @@ MonoBehaviour:
   - {fileID: -1302954537, guid: 53e9db9a84df88747bd56c4896b49151, type: 3}
   - {fileID: -1339863924, guid: 53e9db9a84df88747bd56c4896b49151, type: 3}
   sprite: {fileID: 0}
-  inventory: {fileID: 0}
   timeToGrow: 40
   timeGrown: 0
   fullyGrown: 0
