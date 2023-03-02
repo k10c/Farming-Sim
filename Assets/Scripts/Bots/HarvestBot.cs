@@ -13,7 +13,7 @@ public class HarvestBot : RoboType
 		return (HarvestBot)this.Clone();
 	}
 
-	override public void Interact()
+	override public void Collect()
 	{
 		if(target.CheckIfGrown())
 		{
@@ -22,10 +22,10 @@ public class HarvestBot : RoboType
 		}
 	}
 	
-	override public void Collect()
+	override public void Interact(GameObject player)
 	{
 		Debug.Log(GetDetails());
-		inventory.PassToInv(playerInv);
+		inventory.PassToInv(player.GetComponent<InventoryManager>());
 	}
 
 	override public string GetDetails()

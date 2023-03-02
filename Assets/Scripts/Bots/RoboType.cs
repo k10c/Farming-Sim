@@ -5,7 +5,7 @@ using UnityEngine;
 
 // Original class by: Ben
 
-public abstract class RoboType : MonoBehaviour, IPointerDownHandler
+public abstract class RoboType : MonoBehaviour, InteractableType
 {
 	// for code review: these are currently not private for convenience but could be made so if necessary
 	public ItemSO[] resources; //the types of items the bot will contain
@@ -31,7 +31,6 @@ public abstract class RoboType : MonoBehaviour, IPointerDownHandler
 	
 	public virtual void Awake()
 	{
-		AddPhysics2DRaycaster();
         sprite = GetComponent<SpriteRenderer>();
 		inventory = new InvPacker();
 		playerInv = FindObjectOfType<InventoryManager>();//TEMP
@@ -49,24 +48,7 @@ public abstract class RoboType : MonoBehaviour, IPointerDownHandler
 			Wander();
 		}
 		MoveTo();
-	}
-	
-	//detects when the robot is clicked
-	public void OnPointerDown(PointerEventData eventData)
-    {
-		Collect();
-    }
-	
-	//determines whether a raycaster has already been created (ensures it is only loaded once)
-    private void AddPhysics2DRaycaster()
-    {
-        Physics2DRaycaster physicsRaycaster = FindObjectOfType<Physics2DRaycaster>();
-        if (physicsRaycaster == null)
-        {
-            Camera.main.gameObject.AddComponent<Physics2DRaycaster>();
-        }
-    }
-	
+	}	
 	
 	//notices when a grown plant is within the robots detection radius
 	private void OnTriggerStay2D(Collider2D collision)
@@ -105,7 +87,7 @@ public abstract class RoboType : MonoBehaviour, IPointerDownHandler
 		{
 			destination = this.transform.position;
 			if(target != null)
-				Interact();
+				Collect();
 			target = null;
 			cooldown = false;
 		}
@@ -142,7 +124,7 @@ public abstract class RoboType : MonoBehaviour, IPointerDownHandler
 		cooldown = false;
 	}
 	
-	public abstract void Interact();
+	public abstract void Interact(GameObject player);
 	
 	public abstract void Collect();
 	

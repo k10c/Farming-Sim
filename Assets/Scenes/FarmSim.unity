@@ -5651,6 +5651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitaniumTree
       objectReference: {fileID: 0}
+    - target: {fileID: 6553740543653610043, guid: 0289e52b7b8f5ba438ef9b1d11f85dfb, type: 3}
+      propertyPath: m_TagString
+      value: Plant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0289e52b7b8f5ba438ef9b1d11f85dfb, type: 3}
 --- !u!224 &1903253224 stripped

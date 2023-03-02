@@ -6,7 +6,7 @@ using UnityEngine;
 // Original class by: Ben
 // Observer pattern update by: Aidan
 
-public abstract class PlantType : MonoBehaviour, IPointerDownHandler
+public abstract class PlantType : MonoBehaviour, InteractableType
 {
 	public ItemSO[] resources;
 	public int[] resQuants;
@@ -27,32 +27,11 @@ public abstract class PlantType : MonoBehaviour, IPointerDownHandler
 	
 	public virtual void Awake()
 	{
-		AddPhysics2DRaycaster();
         sprite = GetComponent<SpriteRenderer>();
 		inventory = new InvPacker(resources);
         sprite.sprite = growArray[0];
         ShowGrowth();
         TimeManager.OnMinuteChanged += UpdateGrowth;
-    }
-	
-	//detects when the plant is clicked
-	public void OnPointerDown(PointerEventData eventData)
-    {
-		Debug.Log(GetDetails());
-		if(fullyGrown)
-		{
-			Harvest();
-		}
-    }
-	
-	//determines whether a raycaster has already been created (ensures it is only loaded once)
-    private void AddPhysics2DRaycaster()
-    {
-        Physics2DRaycaster physicsRaycaster = FindObjectOfType<Physics2DRaycaster>();
-        if (physicsRaycaster == null)
-        {
-            Camera.main.gameObject.AddComponent<Physics2DRaycaster>();
-        }
     }
 	
 	// method to return if plant is fully grown
@@ -101,6 +80,12 @@ public abstract class PlantType : MonoBehaviour, IPointerDownHandler
 		Debug.Log(inventory.GetDetails());
 		//sends inventory to whatever harvested the plant
 		return inventory;
+	}
+	
+	public void Interact(GameObject player)
+	{
+		if(fullyGrown)
+			Harvest().PassToInv(player.GetComponent<InventoryManager>());
 	}
 	
 	public abstract string GetDetails();
