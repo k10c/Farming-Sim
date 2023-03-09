@@ -14,7 +14,7 @@ public class RepairObjective : MonoBehaviour
     public Action<int> attemptToComplete;
 
     [SerializeField]
-    private ItemSO resource;
+    private ItemInfo resource;
     [SerializeField]
     private int requiredQuantity;
     [SerializeField]
@@ -28,7 +28,7 @@ public class RepairObjective : MonoBehaviour
 
     void Start()
     {
-        icon.sprite = resource.image;
+        icon.sprite = resource.itemIcon;
         description.text = "Need " + requiredQuantity.ToString();
     }
 

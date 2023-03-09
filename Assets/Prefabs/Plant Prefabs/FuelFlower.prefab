@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5308744468016753467}
   - component: {fileID: 4369021047654534359}
   - component: {fileID: -6246730959930069801}
+  - component: {fileID: -7019344537971639004}
   m_Layer: 0
   m_Name: FuelFlower
   m_TagString: Plant
@@ -103,6 +104,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61b84104fecc5804fbce8a9b0f61cd4c, type: 2}
   - {fileID: 11400000, guid: cc63c4b572efb9a4e970da887dd4e67d, type: 2}
   resQuants: 0300000002000000
+  inventory: {fileID: 0}
   growArray:
   - {fileID: 497225480, guid: 80cd22253ce5e77439cd08984f534b41, type: 3}
   - {fileID: 1633966915, guid: 80cd22253ce5e77439cd08984f534b41, type: 3}
@@ -110,7 +112,6 @@ MonoBehaviour:
   - {fileID: 1613868455, guid: 80cd22253ce5e77439cd08984f534b41, type: 3}
   - {fileID: 828449467, guid: 80cd22253ce5e77439cd08984f534b41, type: 3}
   sprite: {fileID: 0}
-  inventory: {fileID: 0}
   timeToGrow: 30
   timeGrown: 0
   fullyGrown: 0
@@ -162,3 +163,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7019344537971639004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6553740543653610043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27cbac721ac1c4647bac88a145a5097f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInfo: {fileID: 11400000, guid: c3a4a8366ef58e542a5b38ce77819ce7, type: 2}

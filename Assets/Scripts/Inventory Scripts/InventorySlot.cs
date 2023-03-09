@@ -1,38 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine;
+using System;
 
-public class InventorySlot : MonoBehaviour, IDropHandler
+[Serializable]
+public class InventorySlot 
 {
-    public Image image;
-    public Color selectedColor;
-    public Color notSelectedColor;
+    [SerializeField] private ItemInfo itemInfo;
+    [SerializeField] private int stackSize;
+    
+    public int GetStackSize() { return stackSize; }
 
-    private void Awake()
+    public ItemInfo GetItemInfo() { return itemInfo; }
+
+    public InventorySlot() { ClearInventorySlot(); }
+
+    public InventorySlot(ItemInfo info)     // When a new inventory slot object is made it is given the data of the item being picked up
     {
-        Deselected();
+        itemInfo = info;
+        AddToStack();
     }
 
-    public void Selected()
+    public void UpdateInventorySlot(ItemInfo info)      // Updates an existing inventory slot
     {
-        image.color = selectedColor;
+        itemInfo = info;
+        AddToStack();
     }
 
-    public void Deselected()
+    public void AddToStack()
     {
-        image.color = notSelectedColor;
+        stackSize++;
     }
 
-    // Allows items to be placed in empty item slots
-    public void OnDrop(PointerEventData eventData)
+    public void RemoveFromStack()
     {
-        if (transform.childCount == 0)
-        {
-            GameObject dropped = eventData.pointerDrag;
-            InventoryItem inventoryItem = dropped.GetComponent<InventoryItem>();
-            inventoryItem.parentBeforeDrag = transform;
-        }
+        stackSize--;
     }
+
+    public void ClearInventorySlot()
+    {
+        itemInfo = null;
+        stackSize = 0;
+    }
+
+
 }
+
