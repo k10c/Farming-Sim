@@ -41,10 +41,26 @@ There should be some goal that the player is working toward. x - progress bar re
 
 The game does not have to have a win or lose state yet. x
 
+Multiplayer Requirements:
+
+The game supports at least two players either playing cooperatively or competitively.
+
+There is a game loop that allows the players to win, lose or at least achieve progressive goals of some kind.
+
+AI Requirements:
+
+There be at least two AI controlled objects that have distinctly different behavior x
+
+Each AI must have at least 3 distinct states it can be in. x
+
 CREDITS:
 
 All scripts in UI Scripts folder by Aidan
 
 All scripts in Inventory Scripts folder by Jose
+
+All scripts in Bots Scripts folder by Ben
+
+All scripts in Pest Scripts folder by Katen
 
 All other scripts authored as listen in comments
