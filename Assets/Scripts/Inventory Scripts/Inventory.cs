@@ -47,7 +47,7 @@ public class Inventory
         return false;
     } 
 
-    public void Remove(Dictionary<InventorySlotUI, InventorySlot> dictionary, InventorySlotUI slotUI)
+    public void RemoveFromInventory(Dictionary<InventorySlotUI, InventorySlot> dictionary, InventorySlotUI slotUI)
     {
         
         if (dictionary.TryGetValue(slotUI, out InventorySlot slot))
@@ -56,33 +56,9 @@ public class Inventory
             inventoryDisplay.UpdateSlot(slot);
             if (slot.GetStackSize() <= 0)
             {
-                // Debug.Log($"Removed {slotUI.GetAssignedInventorySlot().GetItemInfo().itemName}");
-                dictionary.Remove(slotUI);
                 slot.ClearInventorySlot();
             }
         }
-    }
-
-    // public void RemoveFromInventory(ItemInfo info)
-    // {
-        
-    //     if (SlotWithItemToRemove(info) != null)
-    //     {
-    //         InventorySlot slot = SlotWithItemToRemove(info);
-    //         slot.RemoveFromStack();
-    //         inventoryDisplay.UpdateSlot(slot);
-    //     }
-    // }
-
-    private InventorySlot SlotWithItemToRemove(ItemInfo info)
-    {
-        foreach (var slot in inventorySlots)
-        {
-            if (slot.GetItemInfo() == info && slot.GetStackSize() >= 1)
-                return slot;
-        }
-
-        return null;
     }
 
     private InventorySlot ContainsItem(ItemInfo info)   // Looks for a slot with the info we're looking for that has space
@@ -107,6 +83,19 @@ public class Inventory
 
         Debug.Log("No empty slots");
         return null;
+    }
+
+    public int GetAmountOfCertainItem(ItemInfo info)
+    {
+        int itemCount = 0;
+
+        foreach (var slot in inventorySlots)  
+        {
+            if (slot.GetItemInfo() == info)
+                itemCount++;
+        }  
+
+        return itemCount;
     }
         
     // {

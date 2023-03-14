@@ -96,7 +96,7 @@ public class InventoryDisplay : MonoBehaviour
         {
             GetSelectedSlotInfo(selectedSlot);
             // inventory.RemoveFromInventory(selectedSlotItemInfo);
-            inventory.Remove(slotDictionary, slots[selectedSlot]);
+            inventory.RemoveFromInventory(slotDictionary, slots[selectedSlot]);
         }
     }
 }
