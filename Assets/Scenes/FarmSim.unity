@@ -430,6 +430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Harvester
       objectReference: {fileID: 0}
+    - target: {fileID: 6232839332053707837, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6619942816252554484, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -1419,7 +1423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4369021047654534359, guid: ef67936abb0126c469a47657f6047d0f, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4369021047654534359, guid: ef67936abb0126c469a47657f6047d0f, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
@@ -1874,7 +1878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4369021047654534359, guid: ef67936abb0126c469a47657f6047d0f, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4369021047654534359, guid: ef67936abb0126c469a47657f6047d0f, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
@@ -3376,7 +3380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7875508821886537856, guid: 1b3353d4a9dff4a49b9772cbb761c8ac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.2077
+      value: 7.2077637
       objectReference: {fileID: 0}
     - target: {fileID: 7875508821886537856, guid: 1b3353d4a9dff4a49b9772cbb761c8ac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3401,7 +3405,7 @@ PrefabInstance:
     - target: {fileID: 7875508821886537859, guid: 1b3353d4a9dff4a49b9772cbb761c8ac, type: 3}
       propertyPath: resource
       value: 
-      objectReference: {fileID: 11400000, guid: cc63c4b572efb9a4e970da887dd4e67d, type: 2}
+      objectReference: {fileID: 11400000, guid: cef31aaeb1087704ba43e0c2d7cea6e4, type: 2}
     - target: {fileID: 7875508821886537859, guid: 1b3353d4a9dff4a49b9772cbb761c8ac, type: 3}
       propertyPath: requiredQuantity
       value: 25
@@ -4493,11 +4497,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7875508821886537856, guid: 1b3353d4a9dff4a49b9772cbb761c8ac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.2077
+      value: 7.2077637
       objectReference: {fileID: 0}
     - target: {fileID: 7875508821886537856, guid: 1b3353d4a9dff4a49b9772cbb761c8ac, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 299.8433
+      value: 299.84326
       objectReference: {fileID: 0}
     - target: {fileID: 7875508821886537856, guid: 1b3353d4a9dff4a49b9772cbb761c8ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4515,6 +4519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RepairObjective
       objectReference: {fileID: 0}
+    - target: {fileID: 7875508821886537859, guid: 1b3353d4a9dff4a49b9772cbb761c8ac, type: 3}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 11400000, guid: c3a4a8366ef58e542a5b38ce77819ce7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b3353d4a9dff4a49b9772cbb761c8ac, type: 3}
 --- !u!1001 &7997526894939032493

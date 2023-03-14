@@ -378,8 +378,6 @@
 "Assets/Scripts/Inventory Scripts/InventoryHolder.cs"
 "Assets/Scripts/Inventory Scripts/InventorySlot.cs"
 "Assets/Scripts/Inventory Scripts/InventoryUI/InventoryDisplay.cs"
-"Assets/Scripts/Inventory Scripts/InventoryUI/InventoryItemUI.cs"
-"Assets/Scripts/Inventory Scripts/InventoryUI/InventoryManagerUI.cs"
 "Assets/Scripts/Inventory Scripts/InventoryUI/InventorySlotUI.cs"
 "Assets/Scripts/Inventory Scripts/Item.cs"
 "Assets/Scripts/Inventory Scripts/ItemInfo.cs"

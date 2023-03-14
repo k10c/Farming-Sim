@@ -26,6 +26,8 @@ public class Inventory
     {
         if (ContainsItem(info) != null)     // If item is in the list and the stack isn't full, just increase stack size (&& ContainsItem(info).GetStackSize() <= info.maxStackSize)
         {
+            Debug.Log("Already here");
+
             InventorySlot slot = ContainsItem(info);
             slot.AddToStack();
             inventoryDisplay.UpdateSlot(slot);
@@ -33,11 +35,13 @@ public class Inventory
         }
         else if (FindEmptySlot() != null)       // If item is not in the list look for empty slot      
         {
+            Debug.Log("New");
+
             InventorySlot emptySlot = FindEmptySlot();
             emptySlot.UpdateInventorySlot(info);
             inventoryDisplay.InitializeSlot(emptySlot);
 
-            Debug.Log($"{info.itemName} added for the first time");
+            // Debug.Log($"{info.itemName} added for the first time");
             return true;
         }
         return false;
@@ -52,8 +56,9 @@ public class Inventory
             inventoryDisplay.UpdateSlot(slot);
             if (slot.GetStackSize() <= 0)
             {
-                slot.ClearInventorySlot();
+                // Debug.Log($"Removed {slotUI.GetAssignedInventorySlot().GetItemInfo().itemName}");
                 dictionary.Remove(slotUI);
+                slot.ClearInventorySlot();
             }
         }
     }

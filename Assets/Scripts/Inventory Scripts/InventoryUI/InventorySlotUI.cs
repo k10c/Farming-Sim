@@ -29,7 +29,7 @@ public class InventorySlotUI : MonoBehaviour
     public void InitializeSlotUI(InventorySlot slot)    // Initializes slot UI
     {
         assignedInventorySlot = slot;
-        // Debug.Log("initial");
+        Debug.Log("initial slot ui");
         itemSprite.gameObject.SetActive(true);
         UpdateSlotUI(slot);
     }
@@ -44,7 +44,7 @@ public class InventorySlotUI : MonoBehaviour
     {
         if (slot.GetItemInfo() != null && slot.GetStackSize() > 0)
         {
-            // Debug.Log("update");
+            Debug.Log("update ui");
             itemSprite.sprite = slot.GetItemInfo().itemIcon;
             stackCount.text = slot.GetStackSize().ToString();
 

@@ -26,6 +26,7 @@ public class InventorySlot
     {
         itemInfo = info;
         AddToStack();
+        Debug.Log("Update slot");
     }
 
     public void AddToStack()
