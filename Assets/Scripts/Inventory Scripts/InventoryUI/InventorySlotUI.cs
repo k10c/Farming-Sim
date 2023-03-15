@@ -14,7 +14,11 @@ public class InventorySlotUI : MonoBehaviour
 
     [Header("Item components")]
     [SerializeField] private Image itemSprite;
+    [SerializeField] private Image nameBackground;
+
     [SerializeField] private TextMeshProUGUI stackCount;
+    [SerializeField] private TextMeshProUGUI itemName;
+
 
     public InventoryDisplay inventoryDisplay { get; private set; }
     public InventorySlot GetAssignedInventorySlot() { return assignedInventorySlot; }
@@ -38,6 +42,8 @@ public class InventorySlotUI : MonoBehaviour
     {
         itemSprite.gameObject.SetActive(false);
         stackCount.gameObject.SetActive(false);
+        nameBackground.gameObject.SetActive(false);
+        itemName.text = string.Empty;
     }
 
     public void UpdateSlotUI(InventorySlot slot)
@@ -47,6 +53,8 @@ public class InventorySlotUI : MonoBehaviour
             Debug.Log("update ui");
             itemSprite.sprite = slot.GetItemInfo().itemIcon;
             stackCount.text = slot.GetStackSize().ToString();
+            nameBackground.gameObject.SetActive(true);
+            itemName.text = slot.GetItemInfo().itemName;
 
             if (slot.GetStackSize() > 1)
             {
