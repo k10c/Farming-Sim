@@ -92,7 +92,7 @@ public class Inventory
         foreach (var slot in inventorySlots)  
         {
             if (slot.GetItemInfo() == info)
-                itemCount++;
+                itemCount += slot.GetStackSize();
         }  
 
         return itemCount;
