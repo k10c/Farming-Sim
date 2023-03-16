@@ -92,23 +92,20 @@ public class InventoryManager : MonoBehaviour
             return null;
     }
 
-    // Open and close main inventory with I
+    // Open and close main inventory with Space
     private void Update()
     {
-		//has to be commented out for current control scheme
-		/*
-        if (Input.GetKeyDown(KeyCode.I) && !mainInventory.gameObject.activeSelf)
+		if (Input.GetKeyDown(KeyCode.Space) && !mainInventory.gameObject.activeSelf)
         {
             mainInventory.gameObject.SetActive(true);
         }
-        else if (Input.GetKeyDown(KeyCode.I) && mainInventory.gameObject.activeSelf)
+        else if (Input.GetKeyDown(KeyCode.Space) && mainInventory.gameObject.activeSelf)
         {
             mainInventory.gameObject.SetActive(false);
         }
-		*/
 
         
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.O))
         {
             if (newSelection < 7)
             {
@@ -116,7 +113,7 @@ public class InventoryManager : MonoBehaviour
                 ChangeSelectedSlot(newSelection);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Q))
+        else if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.U))
         {
             if(newSelection > 0)
             {

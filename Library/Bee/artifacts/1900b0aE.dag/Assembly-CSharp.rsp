@@ -378,6 +378,8 @@
 "Assets/Scripts/Inventory Scripts/InventorySlot.cs"
 "Assets/Scripts/Inventory Scripts/ItemSO.cs"
 "Assets/Scripts/InvPacker.cs"
+"Assets/Scripts/PestBot/PestBot2.cs"
+"Assets/Scripts/PestBot/PestManager2.cs"
 "Assets/Scripts/Plants/FuelPlant.cs"
 "Assets/Scripts/Plants/GlassGrass.cs"
 "Assets/Scripts/Plants/PlantType.cs"
