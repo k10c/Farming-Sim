@@ -59,7 +59,7 @@ public class InvPacker : MonoBehaviour
 		for(int res = 0; res < invObjects.Length; res++)
 		{
 			for(;invCount[res] > 0; invCount[res]--)
-				playerInv.inventory.AddToInventory(invObjects[res]);
+				playerInv.inventory.AddToInventory(invObjects[res], invCount[res]);
 		}
 	}
 	

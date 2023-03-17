@@ -79,6 +79,7 @@ public class InventoryDisplay : MonoBehaviour
 
     private void Update()
     {
+        // Keeps slot selection in bounds highlights the right slot
         if (selectedSlot < 11 && Input.GetKeyDown(KeyCode.E))
         {
             previouslySelectedSlot = selectedSlot;
@@ -92,11 +93,18 @@ public class InventoryDisplay : MonoBehaviour
             ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
         }
 
+        // Removes item from the inventory and updates ui
         if (slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo() != null && Input.GetKeyDown(KeyCode.F))
         {
             GetSelectedSlotInfo(selectedSlot);
-            // inventory.RemoveFromInventory(selectedSlotItemInfo);
             inventory.RemoveFromInventory(slotDictionary, slots[selectedSlot]);
         }
+
+        // if (slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo() != null && 
+        //     slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo().itemType == ItemType.Seed &&
+        //     Input.GetKeyDown(KeyCode.K))
+        // {
+            
+        // }
     }
 }

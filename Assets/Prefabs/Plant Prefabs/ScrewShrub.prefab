@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5516017992319910901}
   - component: {fileID: 732493945398317938}
   - component: {fileID: 8739092053069695659}
-  - component: {fileID: -1298700128761245334}
   m_Layer: 0
   m_Name: ScrewShrub
   m_TagString: Plant
@@ -148,9 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources:
-  - {fileID: 11400000, guid: 8a549e0a36435214f8a970725e2d5568, type: 2}
-  - {fileID: 11400000, guid: 7c8caf4feba99b24b870acac9d9f187e, type: 2}
-  resQuants: 0100000003000000
+  - {fileID: 11400000, guid: cef31aaeb1087704ba43e0c2d7cea6e4, type: 2}
+  - {fileID: 11400000, guid: 4c76b18e607afa44b8e2468a672643db, type: 2}
+  resQuants: 0500000002000000
   inventory: {fileID: 0}
   growArray:
   - {fileID: 1523863829, guid: 53e9db9a84df88747bd56c4896b49151, type: 3}
@@ -166,16 +165,3 @@ MonoBehaviour:
   timeGrown: 0
   fullyGrown: 0
   growPercent: 0
---- !u!114 &-1298700128761245334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5455185349656920347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27cbac721ac1c4647bac88a145a5097f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemInfo: {fileID: 11400000, guid: cef31aaeb1087704ba43e0c2d7cea6e4, type: 2}

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4369021047654534359}
   - component: {fileID: -6246730959930069801}
   - component: {fileID: 7929990690099808733}
-  - component: {fileID: 3843111235722374633}
   m_Layer: 0
   m_Name: GlassGrass
   m_TagString: Plant
@@ -148,8 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources:
-  - {fileID: 11400000, guid: d8229b1acd3dccf43abec3d3794fccf7, type: 2}
-  - {fileID: 11400000, guid: b06d488aabb83eb4e8b56647fdbeb39b, type: 2}
+  - {fileID: 11400000, guid: c662359b45a807b43a036e6f967a0729, type: 2}
+  - {fileID: 11400000, guid: 62d16b3a078fab14e8a0b5208ada518a, type: 2}
   resQuants: 0500000001000000
   inventory: {fileID: 0}
   growArray:
@@ -163,16 +162,3 @@ MonoBehaviour:
   timeGrown: 0
   fullyGrown: 0
   growPercent: 0
---- !u!114 &3843111235722374633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6553740543653610043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27cbac721ac1c4647bac88a145a5097f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemInfo: {fileID: 11400000, guid: c662359b45a807b43a036e6f967a0729, type: 2}

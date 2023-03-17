@@ -36,25 +36,25 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Inventory Scripts\Collector.cs" />
+     <Compile Include="Assets\Scripts\Inventory Scripts\InventoryLogic\Collector.cs" />
      <Compile Include="Assets\Scripts\InvPacker.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\PestBot\PestBot2.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\TimeUI.cs" />
      <Compile Include="Assets\Scripts\Bots\HarvestBot.cs" />
-     <Compile Include="Assets\Scripts\Inventory Scripts\ItemInfo.cs" />
+     <Compile Include="Assets\Scripts\Inventory Scripts\InventoryLogic\ItemInfo.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\RepairMenu.cs" />
-     <Compile Include="Assets\Scripts\Inventory Scripts\InventorySlot.cs" />
+     <Compile Include="Assets\Scripts\Inventory Scripts\InventoryLogic\InventorySlot.cs" />
      <Compile Include="Assets\Scripts\InteractableType.cs" />
      <Compile Include="Assets\Scripts\Interactable.cs" />
      <Compile Include="Assets\Scripts\Plants\ScrewShrub.cs" />
-     <Compile Include="Assets\Scripts\Inventory Scripts\Inventory.cs" />
-     <Compile Include="Assets\Scripts\Inventory Scripts\InventoryHolder.cs" />
-     <Compile Include="Assets\Scripts\Inventory Scripts\ICollectable.cs" />
+     <Compile Include="Assets\Scripts\Inventory Scripts\InventoryLogic\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Inventory Scripts\InventoryLogic\InventoryHolder.cs" />
+     <Compile Include="Assets\Scripts\Inventory Scripts\InventoryLogic\ICollectable.cs" />
      <Compile Include="Assets\Scripts\Bots\RoboType.cs" />
      <Compile Include="Assets\Scripts\Clicker.cs" />
-     <Compile Include="Assets\Scripts\Inventory Scripts\Item.cs" />
+     <Compile Include="Assets\Scripts\Inventory Scripts\InventoryLogic\Item.cs" />
      <Compile Include="Assets\Scripts\Plants\FuelPlant.cs" />
      <Compile Include="Assets\Scripts\TimeManager.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\PauseMenu.cs" />
@@ -62,7 +62,7 @@
      <Compile Include="Assets\Scripts\Plants\GlassGrass.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\QuitGame.cs" />
      <Compile Include="Assets\Scripts\PestBot\PestManager2.cs" />
-     <Compile Include="Assets\Scripts\Inventory Scripts\ItemTypeEnum.cs" />
+     <Compile Include="Assets\Scripts\Inventory Scripts\InventoryLogic\ItemTypeEnum.cs" />
      <Compile Include="Assets\Scripts\Plants\TitaniumTree.cs" />
      <Compile Include="Assets\Scripts\Inventory Scripts\InventoryUI\InventorySlotUI.cs" />
      <Compile Include="Assets\Scripts\PlayerInteract.cs" />
