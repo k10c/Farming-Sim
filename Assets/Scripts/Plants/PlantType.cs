@@ -8,7 +8,7 @@ using UnityEngine;
 
 public abstract class PlantType : MonoBehaviour, InteractableType
 {
-	public ItemSO[] resources;
+	public ItemInfo[] resources;
 	public int[] resQuants;
 	public InvPacker inventory;
 	public Sprite[] growArray;
@@ -85,7 +85,7 @@ public abstract class PlantType : MonoBehaviour, InteractableType
 	public void Interact(GameObject player)
 	{
 		if(fullyGrown)
-			Harvest().PassToInv(player.GetComponent<InventoryManager>());
+			Harvest().PassToInv(player.GetComponent<InventoryHolder>());
 	}
 	
 	public abstract string GetDetails();

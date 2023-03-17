@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+[Serializable]
+public class InventoryHolder : MonoBehaviour
+{
+    [SerializeField] private int inventorySize;
+    public Inventory inventory;
+    private void Awake()
+    {
+        inventory = new Inventory(inventorySize);       // Creates an inventory of the size specified. As of now can only stay at 12.
+        inventory.inventoryDisplay = FindObjectOfType<InventoryDisplay>();      // Gets the inventoryDisplay component so that we can use it in the inventory script
+    }
+}

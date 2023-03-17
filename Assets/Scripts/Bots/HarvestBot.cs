@@ -25,7 +25,7 @@ public class HarvestBot : RoboType
 	override public void Interact(GameObject player)
 	{
 		Debug.Log(GetDetails());
-		inventory.PassToInv(player.GetComponent<InventoryManager>());
+		inventory.PassToInv(player.GetComponent<InventoryHolder>());
 	}
 
 	override public string GetDetails()

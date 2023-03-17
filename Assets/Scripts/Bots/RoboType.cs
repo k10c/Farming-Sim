@@ -8,11 +8,11 @@ using UnityEngine;
 public abstract class RoboType : MonoBehaviour, InteractableType
 {
 	// for code review: these are currently not private for convenience but could be made so if necessary
-	public ItemSO[] resources; //the types of items the bot will contain
+	public ItemInfo[] resources; //the types of items the bot will contain
 	[HideInInspector]public int[] resQuants; //the number of each resource (automatically initiated to 0)
 	public Sprite[] spriteArr; //the sprites the object will change between
 	[HideInInspector]public SpriteRenderer sprite; //the sprite component of the robot
-	public InventoryManager playerInv;//TEMP
+	public InventoryHolder playerInv;//TEMP
 	public InvPacker inventory; //the bot's inventory
 	
 
@@ -33,7 +33,7 @@ public abstract class RoboType : MonoBehaviour, InteractableType
 	{
         sprite = GetComponent<SpriteRenderer>();
 		inventory = new InvPacker();
-		playerInv = FindObjectOfType<InventoryManager>();//TEMP
+		playerInv = FindObjectOfType<InventoryHolder>();//TEMP
 		resQuants = new int[resources.Length];
         sprite.sprite = spriteArr[0];
 		target = null;

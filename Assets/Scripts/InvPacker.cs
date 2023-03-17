@@ -6,24 +6,24 @@ using UnityEngine;
 //It can convert it's contents to an inventory automatically, but doesn't require you to understand how inventories work.
 public class InvPacker : MonoBehaviour
 {
-    private ItemSO[] invObjects;
+    private ItemInfo[] invObjects;
 	private int[] invCount;
 	
 	public InvPacker()
 	{
-		invObjects = Resources.LoadAll<ItemSO>("Items");
+		invObjects = Resources.LoadAll<ItemInfo>("Items");
 		invCount = new int[invObjects.Length];
 	}
 	
 	//sets up the InvPacker with a predetermined array of ItemSOs(if an object only needs to hold certain types of objects)
-	public InvPacker(ItemSO[] invArray)
+	public InvPacker(ItemInfo[] invArray)
 	{
 		invObjects = invArray;
 		invCount = new int[invObjects.Length];
 	}
 	
 	//sets up the InvPacker with a predetermined array of ItemSOs and counts (if it already has a set number of certain resource types)
-	public InvPacker(ItemSO[] invArray, int[] invCountArray)
+	public InvPacker(ItemInfo[] invArray, int[] invCountArray)
 	{
 		invObjects = invArray;
 		if(invArray.Length != invCountArray.Length)
@@ -38,7 +38,7 @@ public class InvPacker : MonoBehaviour
 	//Adds the contents of one InvPacker to another, if they share a type
 	public void AddInv(InvPacker addedItems)
 	{
-		ItemSO[] addItems = addedItems.GetInvObjects();
+		ItemInfo[] addItems = addedItems.GetInvObjects();
 		int[] addItemsCount = addedItems.GetInvCount();
 		for(int item = 0; item < invObjects.Length; item++)
 		{
@@ -53,13 +53,13 @@ public class InvPacker : MonoBehaviour
 	}
 	
 	//Passes the contents of the InvPacker to an inventory, while subtracting the quantity of that resources in InvPacker
-	public void PassToInv(InventoryManager inventory)
+	public void PassToInv(InventoryHolder playerInv)
 	{
-		InventoryManager playerInv  = FindObjectOfType<InventoryManager>(); //TEMP
+		// InventoryHolder playerInv  = FindObjectOfType<InventoryHolder>(); //TEMP
 		for(int res = 0; res < invObjects.Length; res++)
 		{
 			for(;invCount[res] > 0; invCount[res]--)
-				playerInv.AddItem(invObjects[res]);
+				playerInv.inventory.AddToInventory(invObjects[res]);
 		}
 	}
 	
@@ -79,7 +79,7 @@ public class InvPacker : MonoBehaviour
 		invCount = newCount;
 	}
 	
-	public ItemSO[] GetInvObjects() { return invObjects; }
+	public ItemInfo[] GetInvObjects() { return invObjects; }
 	public int[] GetInvCount() { return invCount; }
 	public int GetSize(){ return invObjects.Length; }
 	

@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7324e939340e4b7449afaefd04bfb918, type: 3}
+  m_Script: {fileID: 11500000, guid: 999882fd06d69034192f901329740e58, type: 3}
   m_Name: Fuel
   m_EditorClassIdentifier: 
-  type: 0
+  itemName: Fuel
+  itemDescription: 
   stackable: 1
-  image: {fileID: -169246314, guid: c9835d4db38e8f4478f3127b4783d9b9, type: 3}
-  plant: {fileID: 0}
+  maxStackSize: 2
+  itemType: 3
+  itemIcon: {fileID: -169246314, guid: c9835d4db38e8f4478f3127b4783d9b9, type: 3}

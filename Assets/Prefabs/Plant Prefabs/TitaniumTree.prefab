@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4369021047654534359}
   - component: {fileID: -6246730959930069801}
   - component: {fileID: 3458014167354079713}
+  - component: {fileID: 6884834524298384640}
   m_Layer: 0
   m_Name: TitaniumTree
   m_TagString: Plant
@@ -150,6 +151,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 54c094a1b5ba45044bb28b7268cf993b, type: 2}
   - {fileID: 11400000, guid: 8d0ca25485fc54443ada7803784f23e4, type: 2}
   resQuants: 0200000006000000
+  inventory: {fileID: 0}
   growArray:
   - {fileID: 57452607, guid: 87ad5b583fe156446a8bba5b80c9ee38, type: 3}
   - {fileID: -1301635671, guid: 87ad5b583fe156446a8bba5b80c9ee38, type: 3}
@@ -157,8 +159,20 @@ MonoBehaviour:
   - {fileID: -1518809199, guid: 87ad5b583fe156446a8bba5b80c9ee38, type: 3}
   - {fileID: -1496005483, guid: 87ad5b583fe156446a8bba5b80c9ee38, type: 3}
   sprite: {fileID: 0}
-  inventory: {fileID: 0}
   timeToGrow: 50
   timeGrown: 0
   fullyGrown: 0
   growPercent: 0
+--- !u!114 &6884834524298384640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6553740543653610043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27cbac721ac1c4647bac88a145a5097f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInfo: {fileID: 11400000, guid: c131602d1c7eaf84798d4597232b8f30, type: 2}
