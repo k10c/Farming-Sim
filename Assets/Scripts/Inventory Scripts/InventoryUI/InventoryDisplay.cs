@@ -6,6 +6,7 @@ public class InventoryDisplay : MonoBehaviour
 {
     [SerializeField] private InventoryHolder inventoryHolder;
     [SerializeField] private InventorySlotUI[] slots;
+    [SerializeField] private PlayerPlant playerPlant;
 
     private int selectedSlot = 0;
     private int previouslySelectedSlot = -1;
@@ -71,10 +72,9 @@ public class InventoryDisplay : MonoBehaviour
             slots[oldSlot].Deselect();
     }
 
-    private void GetSelectedSlotInfo(int slot)
+    private ItemInfo GetSelectedSlotInfo(int slot)
     {
-        selectedSlotItemInfo = slots[slot].GetAssignedInventorySlot().GetItemInfo();
-        Debug.Log($"contains {selectedSlotItemInfo.itemName}");
+        return selectedSlotItemInfo = slots[slot].GetAssignedInventorySlot().GetItemInfo();
     }
 
     private void Update()
@@ -94,9 +94,11 @@ public class InventoryDisplay : MonoBehaviour
         }
 
         // Removes item from the inventory and updates ui
-        if (slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo() != null && Input.GetKeyDown(KeyCode.F))
+        if (slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo() != null && 
+            slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo().itemType == ItemType.Seed &&
+            Input.GetKeyDown(KeyCode.F))
         {
-            GetSelectedSlotInfo(selectedSlot);
+            playerPlant.Plant(GetSelectedSlotInfo(selectedSlot));
             inventory.RemoveFromInventory(slotDictionary, slots[selectedSlot]);
         }
 

@@ -391,6 +391,7 @@
 "Assets/Scripts/Plants/ScrewShrub.cs"
 "Assets/Scripts/Plants/TitaniumTree.cs"
 "Assets/Scripts/Player Scripts/PlayerMovement.cs"
+"Assets/Scripts/Player Scripts/PlayerPlant.cs"
 "Assets/Scripts/PlayerInteract.cs"
 "Assets/Scripts/RepairObjective.cs"
 "Assets/Scripts/TimeManager.cs"

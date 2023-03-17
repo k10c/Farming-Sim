@@ -468,6 +468,34 @@ MonoBehaviour:
   inventory:
     inventoryDisplay: {fileID: 0}
     inventorySlots: []
+--- !u!4 &440304567 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2050164836912688093, guid: b2080db06c354fb43930eb03181b626d, type: 3}
+  m_PrefabInstance: {fileID: 2050164837134880171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &440304568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440304554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59191126b52c2b6459e09763e1d010b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoArr:
+  - {fileID: 11400000, guid: 489f4609cd8eb9247b163e7b524dcb4a, type: 2}
+  - {fileID: 11400000, guid: 62d16b3a078fab14e8a0b5208ada518a, type: 2}
+  - {fileID: 11400000, guid: 4c76b18e607afa44b8e2468a672643db, type: 2}
+  - {fileID: 11400000, guid: 569ef5decd1879b49a31c518961db249, type: 2}
+  plantArr:
+  - {fileID: 6553740543653610043, guid: ef67936abb0126c469a47657f6047d0f, type: 3}
+  - {fileID: 6553740543653610043, guid: 769c3ac31308c544686931fe139b2ead, type: 3}
+  - {fileID: 5455185349656920347, guid: 53d2847c00c31d6428aefdd6840c40e1, type: 3}
+  - {fileID: 6553740543653610043, guid: 0289e52b7b8f5ba438ef9b1d11f85dfb, type: 3}
+  playerPos: {fileID: 440304567}
 --- !u!1001 &485042123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4237,6 +4265,7 @@ MonoBehaviour:
   - {fileID: 1333979131}
   - {fileID: 1415945105}
   - {fileID: 726489343}
+  playerPlant: {fileID: 440304568}
   inventory:
     inventoryDisplay: {fileID: 0}
     inventorySlots: []

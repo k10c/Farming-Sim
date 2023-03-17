@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRb;
 	//Sprites the player uses
 	[SerializeField] private Sprite[] sprites;
+	private const float DISTANCEFROMPLAYER = 0.3f;
 	//used to help with sprites
 	private int direction;
     
