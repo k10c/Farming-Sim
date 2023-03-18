@@ -7,10 +7,12 @@ using System;
 public class InventoryHolder : MonoBehaviour
 {
     [SerializeField] private int inventorySize;
+    [SerializeField] private InventoryDisplay display;
+    public int player;
     public Inventory inventory;
     private void Awake()
     {
         inventory = new Inventory(inventorySize);       // Creates an inventory of the size specified. As of now can only stay at 12.
-        inventory.inventoryDisplay = FindObjectOfType<InventoryDisplay>();      // Gets the inventoryDisplay component so that we can use it in the inventory script
+        inventory.inventoryDisplay = display;      // Gets the inventoryDisplay component so that we can use it in the inventory script
     }
 }

@@ -80,13 +80,26 @@ public class InventoryDisplay : MonoBehaviour
     private void Update()
     {
         // Keeps slot selection in bounds highlights the right slot
-        if (selectedSlot < 11 && Input.GetKeyDown(KeyCode.E))
+        if (selectedSlot < slots.Length - 1 && Input.GetKeyDown(KeyCode.E) && inventoryHolder.player == 1)
         {
             previouslySelectedSlot = selectedSlot;
             selectedSlot++;
             ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
         }
-        else if (selectedSlot > 0 && Input.GetKeyDown(KeyCode.Q))
+        else if (selectedSlot > 0 && Input.GetKeyDown(KeyCode.Q) && inventoryHolder.player == 1)
+        {
+            previouslySelectedSlot = selectedSlot;
+            selectedSlot--;
+            ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
+        }
+
+        else if (selectedSlot < slots.Length - 1 && Input.GetKeyDown(KeyCode.O) && inventoryHolder.player == 2)
+        {
+            previouslySelectedSlot = selectedSlot;
+            selectedSlot++;
+            ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
+        }
+        else if (selectedSlot > 0 && Input.GetKeyDown(KeyCode.U) && inventoryHolder.player == 2)
         {
             previouslySelectedSlot = selectedSlot;
             selectedSlot--;
@@ -94,9 +107,19 @@ public class InventoryDisplay : MonoBehaviour
         }
 
         // Removes item from the inventory and updates ui
-        if (slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo() != null && 
+        if (inventoryHolder.player == 1 && 
+            slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo() != null && 
             slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo().itemType == ItemType.Seed &&
             Input.GetKeyDown(KeyCode.F))
+        {
+            playerPlant.Plant(GetSelectedSlotInfo(selectedSlot));
+            inventory.RemoveFromInventory(slotDictionary, slots[selectedSlot]);
+        }
+
+        else if (inventoryHolder.player == 2 &&
+            slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo() != null && 
+            slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo().itemType == ItemType.Seed &&
+            Input.GetKeyDown(KeyCode.H))
         {
             playerPlant.Plant(GetSelectedSlotInfo(selectedSlot));
             inventory.RemoveFromInventory(slotDictionary, slots[selectedSlot]);
