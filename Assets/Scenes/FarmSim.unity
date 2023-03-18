@@ -465,6 +465,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySize: 12
+  display: {fileID: 2043056283}
+  player: 1
   inventory:
     inventoryDisplay: {fileID: 0}
     inventorySlots: []
