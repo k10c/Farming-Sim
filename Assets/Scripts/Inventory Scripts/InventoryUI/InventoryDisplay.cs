@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class InventoryDisplay : MonoBehaviour
 {
+    // Player that holds the inventory
     [SerializeField] private InventoryHolder inventoryHolder;
+    // UI inventory slots
     [SerializeField] private InventorySlotUI[] slots;
+    // Script allowing the player to plant
     [SerializeField] private PlayerPlant playerPlant;
 
     private int selectedSlot = 0;
     private int previouslySelectedSlot = -1;
 
-    public Inventory inventory;
-    public Dictionary<InventorySlotUI, InventorySlot> slotDictionary;
+    // Players inventory
+    private Inventory inventory;
+    // Dictionary storing the assignments of the inventory and inventory ui slots
+    private Dictionary<InventorySlotUI, InventorySlot> slotDictionary;
+    // Information of the slot that is currently selected
+    private ItemInfo selectedSlotItemInfo;
 
-    public ItemInfo selectedSlotItemInfo { get; private set; }
-
+    // Assigns players inventory to the inventory variable
     private void Start()
     {
         if (inventoryHolder != null)
@@ -27,11 +33,13 @@ public class InventoryDisplay : MonoBehaviour
             Debug.LogWarning($"No inventory assigned to {this.gameObject}");
         }
 
+        // Makes the first slot to appear selected
         ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
         AssignSlot(inventory);
     }
 
-    public void AssignSlot(Inventory inventoryToDisplay)
+    // Assigns all the inventory slots to a ui slot
+    private void AssignSlot(Inventory inventoryToDisplay)
     {
         slotDictionary = new Dictionary<InventorySlotUI, InventorySlot>();
 
@@ -42,6 +50,7 @@ public class InventoryDisplay : MonoBehaviour
         }
     }
 
+    // Updates a slot to whatever change happens
     public void UpdateSlot(InventorySlot updatedSlot)
     {
         foreach (var slot in slotDictionary)
@@ -53,6 +62,7 @@ public class InventoryDisplay : MonoBehaviour
         }
     }
 
+    // Initializes a slot 
     public void InitializeSlot(InventorySlot updatedSlot)
     {
         foreach (var slot in slotDictionary)
@@ -64,6 +74,7 @@ public class InventoryDisplay : MonoBehaviour
         }
     }
 
+    // Displays which slot is selected
     private void ChangeSelectedSlot(int newSlot, int oldSlot)
     {
         slots[newSlot].Select();
@@ -72,42 +83,16 @@ public class InventoryDisplay : MonoBehaviour
             slots[oldSlot].Deselect();
     }
 
+    // Returns the info of whatever slot is being highlighted
     private ItemInfo GetSelectedSlotInfo(int slot)
     {
         return selectedSlotItemInfo = slots[slot].GetAssignedInventorySlot().GetItemInfo();
     }
 
-    private void Update()
+    // Removes item from the inventory and updates ui
+    private void RemoveItem(int player)
     {
-        // Keeps slot selection in bounds highlights the right slot
-        if (selectedSlot < slots.Length - 1 && Input.GetKeyDown(KeyCode.E) && inventoryHolder.player == 1)
-        {
-            previouslySelectedSlot = selectedSlot;
-            selectedSlot++;
-            ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
-        }
-        else if (selectedSlot > 0 && Input.GetKeyDown(KeyCode.Q) && inventoryHolder.player == 1)
-        {
-            previouslySelectedSlot = selectedSlot;
-            selectedSlot--;
-            ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
-        }
-
-        else if (selectedSlot < slots.Length - 1 && Input.GetKeyDown(KeyCode.O) && inventoryHolder.player == 2)
-        {
-            previouslySelectedSlot = selectedSlot;
-            selectedSlot++;
-            ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
-        }
-        else if (selectedSlot > 0 && Input.GetKeyDown(KeyCode.U) && inventoryHolder.player == 2)
-        {
-            previouslySelectedSlot = selectedSlot;
-            selectedSlot--;
-            ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
-        }
-
-        // Removes item from the inventory and updates ui
-        if (inventoryHolder.player == 1 && 
+        if (player == 1 && 
             slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo() != null && 
             slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo().itemType == ItemType.Seed &&
             Input.GetKeyDown(KeyCode.F))
@@ -116,7 +101,7 @@ public class InventoryDisplay : MonoBehaviour
             inventory.RemoveFromInventory(slotDictionary, slots[selectedSlot]);
         }
 
-        else if (inventoryHolder.player == 2 &&
+        else if (player == 2 &&
             slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo() != null && 
             slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo().itemType == ItemType.Seed &&
             Input.GetKeyDown(KeyCode.H))
@@ -124,12 +109,41 @@ public class InventoryDisplay : MonoBehaviour
             playerPlant.Plant(GetSelectedSlotInfo(selectedSlot));
             inventory.RemoveFromInventory(slotDictionary, slots[selectedSlot]);
         }
+    }
 
-        // if (slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo() != null && 
-        //     slots[selectedSlot].GetAssignedInventorySlot().GetItemInfo().itemType == ItemType.Seed &&
-        //     Input.GetKeyDown(KeyCode.K))
-        // {
-            
-        // }
+    // Keeps slot selection in bounds highlights the right slot
+    private void KeepSelectionInBounds(int player)
+    {
+        if (selectedSlot < slots.Length - 1 && Input.GetKeyDown(KeyCode.E) && player == 1)
+        {
+            previouslySelectedSlot = selectedSlot;
+            selectedSlot++;
+            ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
+        }
+        else if (selectedSlot > 0 && Input.GetKeyDown(KeyCode.Q) && player == 1)
+        {
+            previouslySelectedSlot = selectedSlot;
+            selectedSlot--;
+            ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
+        }
+
+        if (selectedSlot < slots.Length - 1 && Input.GetKeyDown(KeyCode.O) && player == 2)
+        {
+            previouslySelectedSlot = selectedSlot;
+            selectedSlot++;
+            ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
+        }
+        else if (selectedSlot > 0 && Input.GetKeyDown(KeyCode.U) && player == 2)
+        {
+            previouslySelectedSlot = selectedSlot;
+            selectedSlot--;
+            ChangeSelectedSlot(selectedSlot, previouslySelectedSlot);
+        }
+    }
+
+    private void Update()
+    {
+        KeepSelectionInBounds(inventoryHolder.player);
+        RemoveItem(inventoryHolder.player);
     }
 }

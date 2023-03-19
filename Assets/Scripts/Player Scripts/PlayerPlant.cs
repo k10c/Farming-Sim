@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerPlant : MonoBehaviour
 {
-    [SerializeField] private ItemInfo[] infoArr;
-    [SerializeField] private GameObject[] plantArr;
+    [SerializeField] private ItemInfo[] infoArr;    // Holds the seed info
+    [SerializeField] private GameObject[] plantArr;     // Holds the gameobject info
     [SerializeField] private Transform playerPos;
     private Dictionary<ItemInfo, GameObject> seedPlantDictionary = new Dictionary<ItemInfo, GameObject>();
 
+    // Assigns a plant object to a seed
     private void Start()
     {
         for (int i = 0; i < infoArr.Length; i++)
@@ -17,6 +18,7 @@ public class PlayerPlant : MonoBehaviour
         }
     }
 
+    // Plants a plant from a seed in the inventory
     public void Plant(ItemInfo info)
     {
         if (seedPlantDictionary.TryGetValue(info, out GameObject plant))

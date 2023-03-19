@@ -16,5 +16,5 @@ MonoBehaviour:
   itemDescription: 
   stackable: 1
   maxStackSize: 99
-  itemType: 2
+  itemType: 1
   itemIcon: {fileID: 21300000, guid: 7d2a0ef741c1e6b4b8d199cc38298fae, type: 3}

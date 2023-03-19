@@ -199,9 +199,6 @@ MonoBehaviour:
   - {fileID: 1139663277}
   - {fileID: 1010341734}
   playerPlant: {fileID: 2050164837134880174}
-  inventory:
-    inventoryDisplay: {fileID: 0}
-    inventorySlots: []
 --- !u!114 &154821030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6232839332053707837, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6619942816252554484, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
       propertyPath: m_IsTrigger
@@ -3456,7 +3453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1867178663
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4040,9 +4037,6 @@ MonoBehaviour:
   - {fileID: 1810819843}
   - {fileID: 1606295530}
   playerPlant: {fileID: 661701779}
-  inventory:
-    inventoryDisplay: {fileID: 0}
-    inventorySlots: []
 --- !u!114 &2069367159 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5861550762739934645, guid: 025a5944951a7b940b0ae82648eabb0b, type: 3}

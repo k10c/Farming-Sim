@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Item Sriptable Object/Item")]
+// The information of each item
 public class ItemInfo : ScriptableObject
 {
     public string itemName;  

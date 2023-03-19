@@ -8,6 +8,8 @@ public class InventoryHolder : MonoBehaviour
 {
     [SerializeField] private int inventorySize;
     [SerializeField] private InventoryDisplay display;
+
+    // Player number so player 1 or player 2
     public int player;
     public Inventory inventory;
     private void Awake()
