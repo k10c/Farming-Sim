@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Loss.unity
+- path: Assets/Scenes/FarmSimOnline 1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
