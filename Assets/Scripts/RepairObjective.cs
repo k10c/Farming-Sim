@@ -42,6 +42,11 @@ public class RepairObjective : MonoBehaviour
         return requiredQuantity;
     }
 
+    public ItemInfo getResource()
+    {
+        return resource;
+    }
+
     public void setID(int id)
     {
         objectiveID = id;
@@ -53,6 +58,11 @@ public class RepairObjective : MonoBehaviour
         completeButton.SetActive(false);
     }
 
+    public void scaleQuantity()
+    {
+        requiredQuantity = requiredQuantity * 2;
+        description.text = "Need " + requiredQuantity.ToString();
+    }
     
 
 }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // written by Aidan
+// YES ik i use getcomponent but I believe this was by far the simplest way to implement the desired behaviors
 
 public class RepairMenu : MonoBehaviour
 {
@@ -14,12 +15,14 @@ public class RepairMenu : MonoBehaviour
     private RepairObjective[] objectives;
     [SerializeField]
     private Slider progressBar;
+    [SerializeField]
+    private int numPlayers;
 
 
     private bool isOpen = false;
     private int numCompleteObjectives = 0;
     private GameObject currPlayer;
-    private Inventory inventory;
+    // private Inventory inventory;
 
     // Start is called before the first frame update
     private void Start()
@@ -28,8 +31,13 @@ public class RepairMenu : MonoBehaviour
         {
             objectives[i].attemptToComplete += attemptToComplete;
             objectives[i].setID(i);
+            if (numPlayers > 1)
+            {
+                objectives[i].scaleQuantity();
+            }
         }
-        inventory = FindObjectOfType<InventoryHolder>().inventory;
+        // inventory = FindObjectOfType<InventoryHolder>().inventory;
+
     }
 
     public void toggle(GameObject player)
@@ -66,16 +74,15 @@ public class RepairMenu : MonoBehaviour
     private void attemptToComplete(int objectiveID)
     {
         int amountReqd = objectives[objectiveID].getRequiredQuantity();
+        ItemInfo resourceReqd = objectives[objectiveID].getResource();
+        Inventory currInventory = currPlayer.GetComponent< InventoryHolder>().inventory;
 
-        // waiting on new inventory to do the checking part, use currPlayer
-        // for (int i = 0; i < amountReqd; i++)
-        // {
-        //     inventory.(true);
-        // }
+        int amountHeld = currInventory.GetAmountOfCertainItem(resourceReqd);
 
 
-        if(true)
+        if(amountHeld >= amountReqd)
         {
+            currInventory.updateAmount(resourceReqd, amountHeld - amountReqd);
             objectives[objectiveID].complete();
             updateProgress();
         } 

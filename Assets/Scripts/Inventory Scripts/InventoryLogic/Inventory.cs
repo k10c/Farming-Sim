@@ -91,4 +91,9 @@ public class Inventory
 
         return itemCount;
     }
+
+    public void updateAmount(ItemInfo info, int newAmount)
+    {
+        // sets the amount of the item contained in that players inventory to either 0 or the new amount, doesnt really matter cuz items only get used once
+    }
 }
