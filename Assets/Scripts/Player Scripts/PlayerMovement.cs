@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Written by Katen, Jose, and Ben
+//Used to let the players move their characters. Also controls the animator.
 
 public class PlayerMovement : MonoBehaviour
 {
     //speed of the player
-    public float speed;
+    public float speed = 5;
     //player goes left or right
 	[SerializeField] private string upButton = "w";
 	[SerializeField] private string leftButton = "a";
@@ -19,16 +20,15 @@ public class PlayerMovement : MonoBehaviour
     //Rigid Body of the player
     private Rigidbody playerRb;
 	//Sprites the player uses
-	[SerializeField] private Sprite[] sprites;
+	private Animator animator;
+	//???
 	private const float DISTANCEFROMPLAYER = 0.3f;
-	//used to help with sprites
-	private int direction;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        playerRb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,28 +38,26 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKey(leftButton) && !Input.GetKey(rightButton))
 		{
 			horizontalInput = -1;
-			direction = 1;
+			animator.SetInteger("Direction", 1);
 		}
 		else if(Input.GetKey(rightButton) && !Input.GetKey(leftButton))
 		{
 			horizontalInput = 1;
-			direction = 3;
+			animator.SetInteger("Direction", 3);
 		}
 		else
 			horizontalInput = 0;
 		if(Input.GetKey(upButton) && !Input.GetKey(downButton))
 		{
 			verticalInput = 1;
-			direction = 2;
+			animator.SetInteger("Direction", 2);
 		}
 		else if(Input.GetKey(downButton) && !Input.GetKey(upButton))
 		{
 			verticalInput = -1;
-			direction = 0;
+			animator.SetInteger("Direction", 0);
 		}
 			else verticalInput = 0;
-		
-		GetComponent<SpriteRenderer>().sprite = sprites[direction];
 		
         //Make the player move forward
         transform.Translate(Vector3.up * Time.deltaTime * speed * verticalInput);
