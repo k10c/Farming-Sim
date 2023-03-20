@@ -1,8 +1,11 @@
-### Farming Sim
+# Astro Farmer
+Farming Sim by Procrastigamers
 ## HOW TO PLAY:
-# Objective:
+### Objective:
+
 You have crash landed on a strange planet where metalic plantlike organisms that provide no sustenance to your human form reside. Luckily, many of them can be harvested for parts to repair your ship and escape! Complete ship repairs before running out of rations to win, but don't forget to watch out for pests that will come and steal your crops.
-# Controls:
+
+### Controls:
 
 esc - pause
 
