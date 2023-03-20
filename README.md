@@ -9,11 +9,11 @@ You have crash landed on a strange planet where metalic plantlike organisms that
 
 esc - pause
 
-Player 1 / 2:\
-    wasd / ijkl- move \
-    qe / uo - navigate inventory\
-    r / y - harvest crops, interact with ship, and claim resources from helper bot\
-    f / h - plant selected seed\
+Player 1 / 2:
+* wasd / ijkl- move 
+* qe / uo - navigate inventory
+* r / y - harvest crops, interact with ship, and claim resources from helper bot
+* f / h - plant selected seed
 
 may need mouse for menu navigation
 
