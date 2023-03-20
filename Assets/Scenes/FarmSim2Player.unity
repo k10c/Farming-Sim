@@ -410,7 +410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6232839332053707837, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6619942816252554484, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
       propertyPath: m_IsTrigger
@@ -434,11 +434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8619547200788264652, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5533206
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8619547200788264652, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.34
       objectReference: {fileID: 0}
     - target: {fileID: 8619547200788264652, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -474,6 +474,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
+--- !u!114 &485042124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7547932349961568625, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
+  m_PrefabInstance: {fileID: 485042123}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1b58fcbd3ad4c4ca3cdcb03249d676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &522159418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1907,6 +1918,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 561888549}
     m_Modifications:
+    - target: {fileID: 4433166909951831665, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
+      propertyPath: bot
+      value: 
+      objectReference: {fileID: 485042124}
+    - target: {fileID: 4433166909951831665, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
+      propertyPath: numPlayers
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4433166909951831665, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
       propertyPath: progressBar
       value: 
@@ -4266,7 +4285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4249965916921026676, guid: b2080db06c354fb43930eb03181b626d, type: 3}
       propertyPath: interactKey
-      value: p
+      value: y
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2080db06c354fb43930eb03181b626d, type: 3}

@@ -27,6 +27,7 @@ public class TimeUI : MonoBehaviour
     {
         hoursRemaining--;
         timeRemaining.text = $"Hours remaining: {hoursRemaining.ToString()}";
+        
         if (hoursRemaining == 0){
             Time.timeScale = 0.0f;
             SceneManager.LoadScene("Loss");

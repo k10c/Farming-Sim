@@ -149,7 +149,7 @@ MonoBehaviour:
   resources:
   - {fileID: 11400000, guid: cef31aaeb1087704ba43e0c2d7cea6e4, type: 2}
   - {fileID: 11400000, guid: 4c76b18e607afa44b8e2468a672643db, type: 2}
-  resQuants: 0500000002000000
+  resQuants: 0500000001000000
   inventory: {fileID: 0}
   growArray:
   - {fileID: 1523863829, guid: 53e9db9a84df88747bd56c4896b49151, type: 3}

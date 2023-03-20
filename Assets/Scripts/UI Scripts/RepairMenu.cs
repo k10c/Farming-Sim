@@ -17,6 +17,8 @@ public class RepairMenu : MonoBehaviour
     private Slider progressBar;
     [SerializeField]
     private int numPlayers;
+    [SerializeField]
+    private HarvestBot bot;
 
 
     private bool isOpen = false;
@@ -37,7 +39,6 @@ public class RepairMenu : MonoBehaviour
             }
         }
         // inventory = FindObjectOfType<InventoryHolder>().inventory;
-
     }
 
     public void toggle(GameObject player)
@@ -64,6 +65,11 @@ public class RepairMenu : MonoBehaviour
         progressBar.value = ((float)numCompleteObjectives/(float)objectives.Length);
 
         Debug.Log(progressBar.value);
+        
+        if (progressBar.value == .5f)
+        {
+            bot.enabled = true;
+        }
 
         if(progressBar.value == 1.0f )
         {
