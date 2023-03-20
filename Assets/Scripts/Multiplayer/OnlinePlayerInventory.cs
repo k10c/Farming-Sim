@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OnlinePlayerInventory : MonoBehaviour
 {
-	[SerializeField] private InventoryDisplay invDisp;
+	private InventoryDisplay invDisp;
 	[SerializeField] private InventoryHolder playerInv;
 	[SerializeField] private PlayerPlant playerPlants;
 	

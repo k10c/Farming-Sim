@@ -93,8 +93,8 @@ GameObject:
   - component: {fileID: 7907990387799251709}
   - component: {fileID: 2335297913082995096}
   - component: {fileID: -1930904946595665724}
-  - component: {fileID: 4543428094430326137}
-  - component: {fileID: 6333245421527078658}
+  - component: {fileID: 7740961780323917850}
+  - component: {fileID: 8234261484255909216}
   - component: {fileID: 2024972550715945556}
   m_Layer: 0
   m_Name: OnlinePlayer
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 0
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &4543428094430326137
+--- !u!114 &7740961780323917850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,25 +341,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2050164836912688095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e3932aed358dd24394a8687d8310100, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventorySize: 12
-  display: {fileID: 0}
-  player: 1
-  inventory:
-    inventoryDisplay: {fileID: 0}
-    inventorySlots: []
---- !u!114 &6333245421527078658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050164836912688095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59191126b52c2b6459e09763e1d010b1, type: 3}
+  m_Script: {fileID: 11500000, guid: e162a89646dea0a43b7b671870398856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   infoArr:
@@ -373,6 +355,24 @@ MonoBehaviour:
   - {fileID: 5455185349656920347, guid: 53d2847c00c31d6428aefdd6840c40e1, type: 3}
   - {fileID: 6553740543653610043, guid: 0289e52b7b8f5ba438ef9b1d11f85dfb, type: 3}
   playerPos: {fileID: 0}
+--- !u!114 &8234261484255909216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050164836912688095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c55d90c88752cb46bfcc898dc692900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySize: 12
+  display: {fileID: 0}
+  player: 1
+  inventory:
+    inventoryDisplay: {fileID: 0}
+    inventorySlots: []
 --- !u!114 &2024972550715945556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +385,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57396a34f0b63d643a3f78dd31c176f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invDisp: {fileID: 0}
-  playerInv: {fileID: 4543428094430326137}
-  playerPlants: {fileID: 6333245421527078658}
+  playerInv: {fileID: 8234261484255909216}
+  playerPlants: {fileID: 7740961780323917850}

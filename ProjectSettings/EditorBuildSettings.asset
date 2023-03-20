@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FarmSim2Player.unity
     guid: 1798a0aa2ef4ab74db4b33b9dbf6bb14
+  - enabled: 1
+    path: Assets/Scenes/FarmSimOnline.unity
+    guid: d0d336377ef604f41b8f8fac299a4fe4
   m_configObjects: {}
