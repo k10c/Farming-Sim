@@ -1,66 +1,27 @@
-# Farming Sim
-HOW TO PLAY:
+### Farming Sim
+## HOW TO PLAY:
+# Objective:
+You have crash landed on a strange planet where metalic plantlike organisms that provide no sustenance to your human form reside. Luckily, many of them can be harvested for parts to repair your ship and escape! Complete ship repairs before running out of rations to win, but don't forget to watch out for pests that will come and steal your crops.
+# Controls:
 
+esc - pause
 
-REQUIREMENTS CHECKLIST:
+Player 1 / 2:
+    wasd / ijkl- move 
+    qe / uo - navigate inventory
+    r / y - harvest crops, interact with ship, and claim resources from helper bot
+    f / h - plant selected seed
 
-x = we have this/have started this
+may need mouse for menu navigation
 
- General Requirements:
+## CREDITS:
 
-A Windows build of your game. x
+All scripts in UI Scripts folder by Aidan, plus RepairObjective and TimeManager and part of PlantType and the interaction scripts
 
-There should be a start menu scene with a way to quit the game. x
+All scripts in Inventory Scripts folder by Jose, plus player movement, planting, and part of interaction
 
-At least one game scene and one menu scene. x
-
-A pause menu with way to exit to the menu. x
- 
-
-Game Data Requirement:
-
-Two Families of objects with at least five objects in each family. x - inventory, plants
-
-Data model makes uses of at least one or more of the following; Inheritance, Interfaces or scriptable objects. x - inventory is SO, plants use inheritance
- 
-
-UI Requirement:
-
-There must be an in game UI that displays information about the objects. x - inventory system
-
-From the UI display it should be clear that the objects have different properties and uses. x - sprites and item names (in progress)
-
-UI that displays the players progress towards some goal. x - repair progress 
- 
-
-Single Player Interaction
-
-There must the start of a singleplayer game loop. x - can move and watch plants grow, next step is interaction and use of materials
-
-There should be some goal that the player is working toward. x - progress bar represents ship repair
-
-The game does not have to have a win or lose state yet. x
-
-Multiplayer Requirements:
-
-The game supports at least two players either playing cooperatively or competitively.
-
-There is a game loop that allows the players to win, lose or at least achieve progressive goals of some kind.
-
-AI Requirements:
-
-There be at least two AI controlled objects that have distinctly different behavior x
-
-Each AI must have at least 3 distinct states it can be in. x
-
-CREDITS:
-
-All scripts in UI Scripts folder by Aidan
-
-All scripts in Inventory Scripts folder by Jose
-
-All scripts in Bots Scripts folder by Ben
+All scripts in Bots and Plants folders by Ben, plus the Interaction Scripts and nearly all multiplayer functionality
 
 All scripts in Pest Scripts folder by Katen
 
-All other scripts authored as listen in comments
+All other scripts of note authored as listed in comments 
