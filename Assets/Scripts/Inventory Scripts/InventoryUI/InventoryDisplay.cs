@@ -146,4 +146,13 @@ public class InventoryDisplay : MonoBehaviour
         KeepSelectionInBounds(inventoryHolder.player);
         RemoveItem(inventoryHolder.player);
     }
+	
+	public void SetPlayerPlant(PlayerPlant newPlayerPlant)
+	{
+		playerPlant = newPlayerPlant;
+	}
+	public void SetInventoryHolder(InventoryHolder newInventoryHolder)
+	{
+		inventoryHolder = newInventoryHolder;
+	}
 }

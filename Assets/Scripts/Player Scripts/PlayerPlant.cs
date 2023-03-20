@@ -26,4 +26,10 @@ public class PlayerPlant : MonoBehaviour
             Instantiate(plant, playerPos.position, playerPos.rotation);
         }
     }
+	
+	//Used to help with online multiplayer
+	public void SetPlayerPos(Transform newPlayerPos)
+	{
+		playerPos = newPlayerPos;
+	}
 }

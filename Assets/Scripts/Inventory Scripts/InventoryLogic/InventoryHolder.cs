@@ -14,7 +14,15 @@ public class InventoryHolder : MonoBehaviour
     public Inventory inventory;
     private void Awake()
     {
-        inventory = new Inventory(inventorySize);       // Creates an inventory of the size specified. As of now can only stay at 12.
-        inventory.inventoryDisplay = display;      // Gets the inventoryDisplay component so that we can use it in the inventory script
+        SetInventory();
     }
+	public void SetInventory()
+	{
+		inventory = new Inventory(inventorySize);       // Creates an inventory of the size specified. As of now can only stay at 12.
+        inventory.inventoryDisplay = display;      // Gets the inventoryDisplay component so that we can use it in the inventory script
+	}
+	public void SetDisplay(InventoryDisplay newDisplay)
+	{
+		display = newDisplay;
+	}
 }

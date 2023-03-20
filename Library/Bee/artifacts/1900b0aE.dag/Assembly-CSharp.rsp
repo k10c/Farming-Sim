@@ -413,6 +413,7 @@
 "Assets/Scripts/Multiplayer/OnlineGameManager.cs"
 "Assets/Scripts/Multiplayer/OnlineLauncher.cs"
 "Assets/Scripts/Multiplayer/OnlinePauseMenu.cs"
+"Assets/Scripts/Multiplayer/OnlinePlayerInventory.cs"
 "Assets/Scripts/Multiplayer/OnlinePlayerMovement.cs"
 "Assets/Scripts/PestBot/PestBot2.cs"
 "Assets/Scripts/PestBot/PestManager2.cs"
