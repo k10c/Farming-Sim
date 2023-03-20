@@ -2248,6 +2248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0289e52b7b8f5ba438ef9b1d11f85dfb, type: 3}
+--- !u!1 &1910509710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6232839332053707837, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
+  m_PrefabInstance: {fileID: 485042123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1917480941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2410,11 +2415,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604063149742179297, guid: 3826e4b5035a4fc469d7b98de08800f5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 403.3853
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 3604063149742179297, guid: 3826e4b5035a4fc469d7b98de08800f5, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 44.978
+      value: 122.5634
       objectReference: {fileID: 0}
     - target: {fileID: 3604063149742179297, guid: 3826e4b5035a4fc469d7b98de08800f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2446,11 +2451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604063149742179297, guid: 3826e4b5035a4fc469d7b98de08800f5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 758.31
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 3604063149742179297, guid: 3826e4b5035a4fc469d7b98de08800f5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 517.51
+      value: 478.7219
       objectReference: {fileID: 0}
     - target: {fileID: 3604063149742179297, guid: 3826e4b5035a4fc469d7b98de08800f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2902,17 +2907,6 @@ MonoBehaviour:
   - {fileID: 1415945105}
   - {fileID: 726489343}
   playerPlant: {fileID: 440304568}
---- !u!114 &2064860083 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7547932349961568625, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
-  m_PrefabInstance: {fileID: 485042123}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e1b58fcbd3ad4c4ca3cdcb03249d676, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2096355346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3281,7 +3275,7 @@ PrefabInstance:
     - target: {fileID: 4433166909951831665, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
       propertyPath: bot
       value: 
-      objectReference: {fileID: 2064860083}
+      objectReference: {fileID: 1910509710}
     - target: {fileID: 4433166909951831665, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
       propertyPath: progressBar
       value: 
@@ -3374,14 +3368,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Repairs
       objectReference: {fileID: 0}
-    - target: {fileID: 4433166909951831677, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433166910620722661, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
-      propertyPath: requiredQuantity
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
 --- !u!1001 &4531765706077342480
@@ -3391,26 +3377,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 561888549}
     m_Modifications:
-    - target: {fileID: 8907111043502939354, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907111043502939354, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907111043502939354, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 11500000, guid: f77e52a3d6020634d99b5c42ea5b0507, type: 3}
-    - target: {fileID: 8907111043502939354, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907111043502939354, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ChangeScene, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 8907111043536924475, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
       propertyPath: m_Name
       value: PauseMenu

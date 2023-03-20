@@ -20,13 +20,13 @@ public class TimeUI : MonoBehaviour
         // subscribe to hour changing
         TimeManager.OnHourChanged += UpdateTime;
         hoursRemaining = hoursWorthOfRations;
-        timeRemaining.text = $"Hours remaining: {hoursRemaining.ToString()}";
+        timeRemaining.text = $"Hours Worth Of Rations: {hoursRemaining.ToString()}";
     }
 
     void UpdateTime()
     {
         hoursRemaining--;
-        timeRemaining.text = $"Hours remaining: {hoursRemaining.ToString()}";
+        timeRemaining.text = $"Hours Worth Of Rations: {hoursRemaining.ToString()}";
         
         if (hoursRemaining == 0){
             Time.timeScale = 0.0f;

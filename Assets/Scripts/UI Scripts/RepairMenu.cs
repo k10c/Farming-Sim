@@ -18,7 +18,7 @@ public class RepairMenu : MonoBehaviour
     [SerializeField]
     private int numPlayers;
     [SerializeField]
-    private HarvestBot bot;
+    private GameObject bot;
 
 
     private bool isOpen = false;
@@ -68,7 +68,7 @@ public class RepairMenu : MonoBehaviour
         
         if (progressBar.value == .5f)
         {
-            bot.enabled = true;
+            bot.SetActive(true);
         }
 
         if(progressBar.value == 1.0f )
