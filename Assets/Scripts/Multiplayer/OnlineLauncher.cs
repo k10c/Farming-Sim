@@ -2,11 +2,14 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
+//Written by Ben
+//Used to start online games and connect players to the lobby, called from a menu
+
 public class OnlineLauncher : MonoBehaviourPunCallbacks
 {
 	[SerializeField] private byte maxPlayers = 2;
-	bool isConnecting;
-	string gameVersion = "1";
+	private bool isConnecting;
+	private string gameVersion = "1";
 	
 	void Awake()
 	{

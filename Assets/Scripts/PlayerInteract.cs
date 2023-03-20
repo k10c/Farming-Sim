@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Written by Aidan and Ben
+
 public class PlayerInteract : MonoBehaviour
 {
 	[SerializeField] private string interactKey = "r";

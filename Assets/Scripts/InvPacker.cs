@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Written by Ben
 //InvPacker is a way for us to pass inventories between objects without needing each one to have an actual inventory.
 //It can convert it's contents to an inventory automatically, but doesn't require you to understand how inventories work.
+
 public class InvPacker : MonoBehaviour
 {
     private ItemInfo[] invObjects;

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Written by Jose
+
 public class PlayerPlant : MonoBehaviour
 {
     [SerializeField] private ItemInfo[] infoArr;    // Holds the seed info

@@ -4,25 +4,24 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 
 // Original class by: Ben
+//RoboType is used to make bots that will help the player in various ways.
 
 public abstract class RoboType : MonoBehaviour, InteractableType
 {
-	// for code review: these are currently not private for convenience but could be made so if necessary
-	public ItemInfo[] resources; //the types of items the bot will contain
-	[HideInInspector]public int[] resQuants; //the number of each resource (automatically initiated to 0)
-	public Sprite[] spriteArr; //the sprites the object will change between
-	[HideInInspector]public SpriteRenderer sprite; //the sprite component of the robot
-	public InventoryHolder playerInv;//TEMP
-	public InvPacker inventory; //the bot's inventory
+	[SerializeField]private ItemInfo[] resources; //the types of items the bot will contain
+	[SerializeField]private Sprite[] spriteArr; //the sprites the object will change between
+	[SerializeField]private float speed = 3; //the speed of the robot
+	[SerializeField]private GameObject background; //Sets the object to later find the bounds of, to limit the robot's movement
 	
-
-	public float speed; //the speed of the robot
-	public GameObject background; //Sets the object to later find the bounds of, to limit the robot's movement
-	[HideInInspector]public BoxCollider2D brBounds; //The bounds of the game object above
-	public PlantType target; //The plant the robot is currently going after (to interact with)
-	public Vector3 destination; //Where the bot is going
-	public bool cooldown; //If the bot is engaged in an activity that should not be interrupted
-	public Vector3 wanderTarget; //TEMPORARY wander target
+	[HideInInspector]public InvPacker inventory; //the bot's inventory
+	[HideInInspector]public PlantType target; //The plant the robot is currently going after (to interact with)
+	
+	private int[] resQuants; //the number of each resource (automatically initiated to 0)
+	private SpriteRenderer sprite; //the sprite component of the robot
+	private BoxCollider2D brBounds; //The bounds of the game object above
+	private Vector3 destination; //Where the bot is going
+	private bool cooldown; //If the bot is engaged in an activity that should not be interrupted
+	private Vector3 wanderTarget; //TEMPORARY wander target
 	
     public RoboType(){	}
 	
@@ -33,7 +32,6 @@ public abstract class RoboType : MonoBehaviour, InteractableType
 	{
         sprite = GetComponent<SpriteRenderer>();
 		inventory = new InvPacker();
-		playerInv = FindObjectOfType<InventoryHolder>();//TEMP
 		resQuants = new int[resources.Length];
         sprite.sprite = spriteArr[0];
 		target = null;

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Written by Ben
+//Used to help set up the various inventory elements (such as those in the OnlinePlayer prefab and the InventoryBar prefab).
+
 public class OnlinePlayerInventory : MonoBehaviour
 {
 	private InventoryDisplay invDisp;

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-// By Katen + Jose
+// Written by Katen, Jose, and Ben
+// Used to make online players and control their movement (so that players don't control eachother by accident).
 
 public class OnlinePlayerMovement : MonoBehaviourPun, IPunObservable
 {
@@ -84,6 +85,7 @@ public class OnlinePlayerMovement : MonoBehaviourPun, IPunObservable
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
     }
 	
+	//neccessary for implementation, used to pass variables if needed
 	public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
 		if (stream.IsWriting)

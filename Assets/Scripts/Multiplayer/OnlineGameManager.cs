@@ -7,10 +7,14 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 
+//Written by Ben
+//Used to initialize game objects that are local to the client's game
+
 public class OnlineGameManager : MonoBehaviourPunCallbacks
 {
 	public GameObject playerPrefab;
 	
+	//Checks if the playerPrefab is set, and creates an instance of it on the network if it is
 	void Start()
 		{
 			if (playerPrefab == null)
@@ -31,6 +35,7 @@ public class OnlineGameManager : MonoBehaviourPunCallbacks
 			}
 		}
 	
+	//If the player is the master client, loads the online scene
 	void LoadArena()
 	{
 		if (!PhotonNetwork.IsMasterClient)
@@ -42,17 +47,20 @@ public class OnlineGameManager : MonoBehaviourPunCallbacks
 		PhotonNetwork.LoadLevel("FarmSimOnline");
 	}
 	
+	//Used when the player leaves the lobby. Resets the time to 1, since it may be called from a pause menu.
 	public void LeaveRoom()
     {
         Time.timeScale = 1f;
         PhotonNetwork.LeaveRoom();
     }
 	
+	//Called when the player has left the multiplayer lobby. Resets the scene to the main menu.
     public override void OnLeftRoom()
     {
         SceneManager.LoadScene(0);
     }
 	
+	//When a player enters the lobby, shows the other player in the lobby. If the first player in, loads the scene. 
 	public override void OnPlayerEnteredRoom(Player other)
 	{
 		Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName);  // not seen if you're the player connecting
@@ -63,6 +71,7 @@ public class OnlineGameManager : MonoBehaviourPunCallbacks
 		}
 	}
 	
+	//When a player leaves the lobby, shows who left. If the first player in leaves, reloads the area with the remaining power.
 	public override void OnPlayerLeftRoom(Player other)
 	{
 		Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName); // seen when other disconnects

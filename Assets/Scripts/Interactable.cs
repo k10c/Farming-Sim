@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Written by Aidan
+// Written by Aidan and Ben
+// Used by interactable interface elements (like the ship)
 
 public class Interactable : MonoBehaviour, InteractableType
 

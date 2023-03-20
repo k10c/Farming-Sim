@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Written by: Ben
+//HarvestBot is a type of bot that helps the player by gathering the resources from grown plants.
+//It wanders around until it finds a grown plant, then harvest them and stores the contents in its own inventory.
 
 public class HarvestBot : RoboType
 {

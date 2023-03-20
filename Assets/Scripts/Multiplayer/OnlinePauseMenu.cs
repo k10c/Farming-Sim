@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Written by Aiden and Ben
+//Controls the pause menu. Needed a unique version for multiplayer that didn't stop time.
+
 public class OnlinePauseMenu : MonoBehaviour
 {
     
     // variable to keep track of whether or not the game is paused; default false
     private static bool GameIsPaused = false;
-    // 
+    // The UI that is being activated / deactivated
     [SerializeField]
     private GameObject pauseMenuUI;
 
@@ -25,13 +28,13 @@ public class OnlinePauseMenu : MonoBehaviour
         }
     }
 
-    // close pause menu and unfreeze time
+    // close pause menu
     void Resume(){
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
     }
 
-    // freeze time and open pause menu
+    // open pause menu
     void Pause(){
         pauseMenuUI.SetActive(true);
         GameIsPaused = true;
