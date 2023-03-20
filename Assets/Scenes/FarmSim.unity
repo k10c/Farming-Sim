@@ -3378,6 +3378,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4433166910620722661, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
+      propertyPath: requiredQuantity
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
 --- !u!1001 &4531765706077342480
@@ -3387,6 +3391,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 561888549}
     m_Modifications:
+    - target: {fileID: 8907111043502939354, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907111043502939354, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907111043502939354, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: f77e52a3d6020634d99b5c42ea5b0507, type: 3}
+    - target: {fileID: 8907111043502939354, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907111043502939354, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ChangeScene, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8907111043536924475, guid: 2e3f9b9685dcb024ab88e3764de3e22b, type: 3}
       propertyPath: m_Name
       value: PauseMenu

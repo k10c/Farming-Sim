@@ -691,6 +691,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 49202609}
     m_Modifications:
+    - target: {fileID: 3389243953065767027, guid: 8d1684ba02339c14dbeb8b19ecece510, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.3529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389243953065767027, guid: 8d1684ba02339c14dbeb8b19ecece510, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389243953065767027, guid: 8d1684ba02339c14dbeb8b19ecece510, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284105216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389243953765987371, guid: 8d1684ba02339c14dbeb8b19ecece510, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389243953765987371, guid: 8d1684ba02339c14dbeb8b19ecece510, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389243953765987371, guid: 8d1684ba02339c14dbeb8b19ecece510, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3389243953765987374, guid: 8d1684ba02339c14dbeb8b19ecece510, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
