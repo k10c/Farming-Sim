@@ -15,7 +15,7 @@ public class OnlineGameManager : MonoBehaviourPunCallbacks
 		{
 			if (playerPrefab == null)
 			{
-				Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab",this);
+				Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'",this);
 			}
 			else
 			{
@@ -44,6 +44,7 @@ public class OnlineGameManager : MonoBehaviourPunCallbacks
 	
 	public void LeaveRoom()
     {
+        Time.timeScale = 1f;
         PhotonNetwork.LeaveRoom();
     }
 	
