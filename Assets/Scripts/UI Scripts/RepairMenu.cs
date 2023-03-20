@@ -88,7 +88,7 @@ public class RepairMenu : MonoBehaviour
 
         if(amountHeld >= amountReqd)
         {
-            currInventory.updateAmount(resourceReqd, amountHeld - amountReqd);
+            currInventory.UpdateAmount(resourceReqd, amountHeld - amountReqd);
             objectives[objectiveID].complete();
             updateProgress();
         } 

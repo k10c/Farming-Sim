@@ -38,6 +38,11 @@ public class InventorySlot
         stackSize--;
     }
 
+    public void UpdateStackSize(int newAmount)
+    {
+        stackSize = newAmount;
+    }
+
     // Clears an inventory slot
     public void ClearInventorySlot()
     {
