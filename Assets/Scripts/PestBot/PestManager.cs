@@ -41,6 +41,7 @@ public abstract class PestManager : MonoBehaviour
 		destination = this.transform.position;
         chaserInRange = false;
         chaser2InRange = false;
+        cooldown = false;
     }
 	
 	public void Update()
@@ -85,6 +86,7 @@ public abstract class PestManager : MonoBehaviour
                         plantInRange = false;
                         Debug.LogWarning("Plant is not in Range");
                         target = null;
+                        cooldown = false;
                     }
 			}
             if (collision.gameObject.tag == "Player")
@@ -130,11 +132,14 @@ public abstract class PestManager : MonoBehaviour
 			destination = this.transform.position;
             if(target != null)
 			{
-				AttackPlants();
-				
-				cooldown = false;
+				AttackPlants();	
 			}
+            else
+            {
             target = null;
+            cooldown = false;
+            }
+            
 		}
 	}
 	

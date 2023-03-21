@@ -97,6 +97,7 @@ public abstract class PestManager2 : MonoBehaviour
 				}
 				else
 					target = null;
+					cooldown = false;
 			}
             if (collision.gameObject.tag == "Player")
             {
@@ -129,9 +130,10 @@ public abstract class PestManager2 : MonoBehaviour
             if(target != null)
 			{
 				AttackPlants();
-				target = null;
-				cooldown = false;
 			}
+			else 
+				cooldown = false;
+				target = null;
 		}
 	}
 	
