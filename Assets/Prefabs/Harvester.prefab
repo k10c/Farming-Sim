@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 6232839332053707837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2b4752bce841cc74bb73820ce5212d34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a00921e4e53c0a4d8e425e703748103, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,19 +102,12 @@ MonoBehaviour:
   resources:
   - {fileID: 11400000, guid: 0167e08ab47066d44a7b801e46d997e5, type: 2}
   - {fileID: 11400000, guid: 896fed8f2428fe941b98ca45da08f860, type: 2}
-  resQuants: 
   spriteArr:
   - {fileID: 21300000, guid: 2b4752bce841cc74bb73820ce5212d34, type: 3}
-  sprite: {fileID: 0}
-  playerInv: {fileID: 0}
-  inventory: {fileID: 0}
-  speed: 3
+  speed: 2
   background: {fileID: 0}
-  brBounds: {fileID: 0}
+  inventory: {fileID: 0}
   target: {fileID: 0}
-  destination: {x: 0, y: 0, z: 0}
-  cooldown: 0
-  wanderTarget: {x: 0, y: 0, z: 0}
 --- !u!58 &6619942816252554484
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -125,7 +118,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

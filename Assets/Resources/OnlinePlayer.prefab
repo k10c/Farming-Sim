@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 7740961780323917850}
   - component: {fileID: 8234261484255909216}
   - component: {fileID: 2024972550715945556}
+  - component: {fileID: 9169873827425109287}
   m_Layer: 0
   m_Name: OnlinePlayer
   m_TagString: Player
@@ -387,3 +388,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInv: {fileID: 8234261484255909216}
   playerPlants: {fileID: 7740961780323917850}
+--- !u!114 &9169873827425109287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050164836912688095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11561adb5549ee84da3396a9aa994a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

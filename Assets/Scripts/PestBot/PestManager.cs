@@ -8,8 +8,6 @@ using UnityEngine;
 public abstract class PestManager : MonoBehaviour
 {
 	// for code review: these are currently not private for convenience but could be made so if necessary
-	public Sprite[] spriteArr; //the sprites the object will change between
-	[HideInInspector]public SpriteRenderer sprite; //the sprite component of the robot
 	public Vector3 wanderDir; //for wandering
 	public float wanderRad; //for wandering
 	public float speed; //the speed of the robot
@@ -34,8 +32,6 @@ public abstract class PestManager : MonoBehaviour
 	
 	public virtual void Awake()
 	{
-        sprite = GetComponent<SpriteRenderer>();
-        sprite.sprite = spriteArr[0];
 		target = null;
 		brBounds = background.GetComponent<BoxCollider2D>();
 		destination = this.transform.position;
@@ -161,6 +157,7 @@ public abstract class PestManager : MonoBehaviour
 		Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(wanderTarget);
 		
 		destination = targetWorld;
+		
 	}
 	
 	//checks if the robot is close to its destination

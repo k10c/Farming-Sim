@@ -9,7 +9,6 @@ using UnityEngine;
 public abstract class RoboType : MonoBehaviour, InteractableType
 {
 	[SerializeField]private ItemInfo[] resources; //the types of items the bot will contain
-	[SerializeField]private Sprite[] spriteArr; //the sprites the object will change between
 	[SerializeField]private float speed = 3; //the speed of the robot
 	[SerializeField]private GameObject background; //Sets the object to later find the bounds of, to limit the robot's movement
 	
@@ -17,7 +16,6 @@ public abstract class RoboType : MonoBehaviour, InteractableType
 	[HideInInspector]public PlantType target; //The plant the robot is currently going after (to interact with)
 	
 	private int[] resQuants; //the number of each resource (automatically initiated to 0)
-	private SpriteRenderer sprite; //the sprite component of the robot
 	private BoxCollider2D brBounds; //The bounds of the game object above
 	private Vector3 destination; //Where the bot is going
 	private bool cooldown; //If the bot is engaged in an activity that should not be interrupted
@@ -30,10 +28,8 @@ public abstract class RoboType : MonoBehaviour, InteractableType
 	
 	public virtual void Awake()
 	{
-        sprite = GetComponent<SpriteRenderer>();
 		inventory = new InvPacker();
 		resQuants = new int[resources.Length];
-        sprite.sprite = spriteArr[0];
 		target = null;
 		brBounds = background.GetComponent<BoxCollider2D>();
 		destination = this.transform.position;

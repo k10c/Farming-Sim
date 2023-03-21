@@ -10,8 +10,6 @@ public abstract class PestManager2 : MonoBehaviour
 	// for code review: these are currently not private for convenience but could be made so if necessary
 	public ItemInfo[] resources; //the types of items the bot will contain
 	[HideInInspector]public int[] resQuants; //the number of each resource (automatically initiated to 0)
-	public Sprite[] spriteArr; //the sprites the object will change between
-	[HideInInspector]public SpriteRenderer sprite; //the sprite component of the robot
 	
 	
 	public float speed; //the speed of the robot
@@ -36,9 +34,6 @@ public abstract class PestManager2 : MonoBehaviour
 	
 	public virtual void Awake()
 	{
-		
-        sprite = GetComponent<SpriteRenderer>();
-		sprite.sprite = spriteArr[0];
 		resQuants = new int[resources.Length];
         
 		target = null;
@@ -46,6 +41,7 @@ public abstract class PestManager2 : MonoBehaviour
 		destination = this.transform.position;
         chaser1InRange = false; 
 		chaser2InRange = false;
+		
     }
 	
 	public void Update()

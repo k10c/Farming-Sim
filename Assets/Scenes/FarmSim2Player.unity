@@ -143,22 +143,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6619942816252554484, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6619942816252554484, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7547932349961568625, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7547932349961568625, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
-      propertyPath: background
-      value: 
-      objectReference: {fileID: 704879529}
     - target: {fileID: 8619547200788264652, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -599,11 +583,6 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2050164836912688093, guid: b2080db06c354fb43930eb03181b626d, type: 3}
   m_PrefabInstance: {fileID: 661701775}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &704879529 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2565804991527587857, guid: d1aea29dafa06af4da89dec388a215ed, type: 3}
-  m_PrefabInstance: {fileID: 2565804990823041976}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &742787346
 PrefabInstance:
@@ -1400,57 +1379,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5339480880402714152, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-      propertyPath: chaser1
-      value: 
-      objectReference: {fileID: 661701778}
-    - target: {fileID: -5339480880402714152, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-      propertyPath: chaser2
-      value: 
-      objectReference: {fileID: 239808953}
-    - target: {fileID: -5339480880402714152, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -5339480880402714152, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-      propertyPath: resources.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -5339480880402714152, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-      propertyPath: spriteArr.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -5339480880402714152, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-      propertyPath: distanceBetweenPlayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -5339480880402714152, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-      propertyPath: spriteArr.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2d95cf258837ba44896030e25b9f2dd7, type: 3}
     - target: {fileID: 1351141694030941259, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
       propertyPath: m_Name
       value: Pest
       objectReference: {fileID: 0}
-    - target: {fileID: 2966927270634092696, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 953b8abb3b6548c4294b547c2f473be0, type: 3}
     - target: {fileID: 7882254390688361051, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
       propertyPath: m_RootOrder
       value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 7882254390688361051, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7882254390688361051, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7882254390688361051, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7882254390688361051, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1494,87 +1429,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
---- !u!1 &1022510865 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1351141694030941259, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
-  m_PrefabInstance: {fileID: 906740901}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1022510867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022510865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38010b014ac345f4a9b5ad0a1a7ce07b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resources:
-  - {fileID: 0}
-  - {fileID: 0}
-  resQuants: 
-  spriteArr:
-  - {fileID: 21300000, guid: 2d95cf258837ba44896030e25b9f2dd7, type: 3}
-  sprite: {fileID: 0}
-  speed: 2.5
-  background: {fileID: 704879529}
-  brBounds: {fileID: 0}
-  target: {fileID: 0}
-  destination: {x: 0, y: 0, z: 0}
-  cooldown: 0
-  wanderTarget: {x: 0, y: 0, z: 0}
-  chaser1: {fileID: 661701778}
-  chaser2: {fileID: 239808953}
-  chaser1InRange: 0
-  chaser2InRange: 0
-  plantInRange: 0
-  distance: 0
-  distanceBetweenPlayer: 2
---- !u!114 &1022510872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022510865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f399e9924645838458d2a9642d6814f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteArr:
-  - {fileID: 21300000, guid: 2d95cf258837ba44896030e25b9f2dd7, type: 3}
-  sprite: {fileID: 0}
-  wanderDir: {x: 0, y: 0, z: 0}
-  wanderRad: 1.6
-  speed: 0.6
-  background: {fileID: 704879529}
-  brBounds: {fileID: 0}
-  target: {fileID: 0}
-  destination: {x: 0, y: 0, z: 0}
-  cooldown: 0
-  wanderTarget: {x: 0, y: 0, z: 0}
-  chaser: {fileID: 661701778}
-  chaser2: {fileID: 239808953}
-  chaserInRange: 0
-  chaser2InRange: 0
-  plantInRange: 0
-  distance: 0
-  distanceBetweenPlayer: 2
---- !u!114 &1022510873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022510865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11561adb5549ee84da3396a9aa994a7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1030963370
 PrefabInstance:
   m_ObjectHideFlags: 0
