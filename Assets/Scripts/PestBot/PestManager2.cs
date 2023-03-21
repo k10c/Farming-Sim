@@ -38,7 +38,7 @@ public abstract class PestManager2 : MonoBehaviour
         
 		target = null;
 		brBounds = background.GetComponent<BoxCollider2D>();
-		destination = this.transform.position;
+		destination = new Vector3(0,0,0);
         chaser1InRange = false; 
 		chaser2InRange = false;
 		
@@ -50,19 +50,16 @@ public abstract class PestManager2 : MonoBehaviour
 		{
 			Wander();
 		}
-		MoveTo();
 
         if(chaser1InRange)
         {
             FleePlayer1();
         }
-        MoveTo();
 
 		if(chaser2InRange)
 		{
 			FleePlayer2();
 		}
-		MoveTo();
 
         if(plantInRange)
         {

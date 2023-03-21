@@ -60,8 +60,7 @@ public class InvPacker : MonoBehaviour
 		// InventoryHolder playerInv  = FindObjectOfType<InventoryHolder>(); //TEMP
 		for(int res = 0; res < invObjects.Length; res++)
 		{
-			for(;invCount[res] > 0; invCount[res]--)
-				playerInv.inventory.AddToInventory(invObjects[res], invCount[res]);
+			playerInv.inventory.AddToInventory(invObjects[res], invCount[res]);
 		}
 	}
 	

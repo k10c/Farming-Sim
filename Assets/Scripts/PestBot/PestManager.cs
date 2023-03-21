@@ -34,7 +34,7 @@ public abstract class PestManager : MonoBehaviour
 	{
 		target = null;
 		brBounds = background.GetComponent<BoxCollider2D>();
-		destination = this.transform.position;
+		destination = new Vector3(0,0,0);
         chaserInRange = false;
         chaser2InRange = false;
         cooldown = false;
@@ -46,13 +46,11 @@ public abstract class PestManager : MonoBehaviour
 		{
 			Wander();
 		}
-		MoveTo();
 
         if(chaserInRange || chaser2InRange )
         {
             Flee();
         }
-        MoveTo();
 
         if(plantInRange && !chaserInRange || !chaser2InRange)
         {

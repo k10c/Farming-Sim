@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7547932349961568625, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 572647582}
     - target: {fileID: 8619547200788264652, guid: 600f96fc7e4b5ad47b9011ad86b0797c, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -300,6 +304,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &572647582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2565804991527587857, guid: d1aea29dafa06af4da89dec388a215ed, type: 3}
+  m_PrefabInstance: {fileID: 2565804990823041976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &661701775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1379,6 +1388,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1093084887, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
+      propertyPath: chaser
+      value: 
+      objectReference: {fileID: 661701778}
+    - target: {fileID: 1093084887, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
+      propertyPath: chaser2
+      value: 
+      objectReference: {fileID: 239808953}
+    - target: {fileID: 1093084887, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 572647582}
+    - target: {fileID: 1093084888, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
+      propertyPath: chaser1
+      value: 
+      objectReference: {fileID: 661701778}
+    - target: {fileID: 1093084888, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
+      propertyPath: chaser2
+      value: 
+      objectReference: {fileID: 239808953}
+    - target: {fileID: 1093084888, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 572647582}
     - target: {fileID: 1351141694030941259, guid: c7c1f5528a8e61142ab65ca67bcf5822, type: 3}
       propertyPath: m_Name
       value: Pest
