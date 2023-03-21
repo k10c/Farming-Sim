@@ -5,15 +5,13 @@ using UnityEngine;
 //Wander + Move To made by Ben
 // Class created by: Katen
 
-public abstract class PestManager2 : MonoBehaviour
+public abstract class PestManager : MonoBehaviour
 {
 	// for code review: these are currently not private for convenience but could be made so if necessary
-	public ItemInfo[] resources; //the types of items the bot will contain
-	[HideInInspector]public int[] resQuants; //the number of each resource (automatically initiated to 0)
 	public Sprite[] spriteArr; //the sprites the object will change between
 	[HideInInspector]public SpriteRenderer sprite; //the sprite component of the robot
-	
-	
+	public Vector3 wanderDir; //for wandering
+	public float wanderRad; //for wandering
 	public float speed; //the speed of the robot
 	public GameObject background; //Sets the object to later find the bounds of, to limit the robot's movement
 	[HideInInspector]public BoxCollider2D brBounds; //The bounds of the game object above
@@ -21,65 +19,51 @@ public abstract class PestManager2 : MonoBehaviour
 	public Vector3 destination; //Where the bot is going
 	public bool cooldown; //If the bot is engaged in an activity that should not be interrupted
 	public Vector3 wanderTarget; //TEMPORARY wander target
-    public Transform chaser1; //the player that makes the pestBot flee
-    public Transform chaser2; // the second player that makes the pestBot flee
-	public bool  chaser1InRange, chaser2InRange, plantInRange; //Checks if chaser1 or plant in range, then it will execute the action it is given
+    public Transform chaser; //the player that makes the pestBot flee
+    public Transform chaser2;
+    public bool  chaserInRange, chaser2InRange, plantInRange; //Checks if chaser or plant in range, then it will execute the action it is given
     
-	//Flee
+    //Flee
 	public float distance;
 	public float distanceBetweenPlayer; //sets how much distance in between player and PestBot
 	
-    public PestManager2(){	}
+    public PestManager(){	}
 	
-	public abstract PestManager2 Clone();
+	public abstract PestManager Clone();
 	
 	
 	public virtual void Awake()
 	{
-		
         sprite = GetComponent<SpriteRenderer>();
-		sprite.sprite = spriteArr[0];
-		resQuants = new int[resources.Length];
-        
+        sprite.sprite = spriteArr[0];
 		target = null;
 		brBounds = background.GetComponent<BoxCollider2D>();
 		destination = this.transform.position;
-        chaser1InRange = false; 
-		chaser2InRange = false;
+        chaserInRange = false;
+        chaser2InRange = false;
+        cooldown = false;
     }
 	
 	public void Update()
 	{
-		if(!cooldown && !chaser1InRange && !chaser2InRange && !plantInRange)
+		if(!cooldown && !chaserInRange && !chaser2InRange && !plantInRange)
 		{
 			Wander();
 		}
 		MoveTo();
 
-        if(chaser1InRange)
+        if(chaserInRange || chaser2InRange )
         {
-            FleePlayer1();
+            Flee();
         }
         MoveTo();
 
-		if(chaser2InRange)
-		{
-			FleePlayer2();
-		}
-		MoveTo();
-
-        if(plantInRange)
+        if(plantInRange && !chaserInRange || !chaser2InRange)
         {
             AttackPlants();
         }
         MoveTo();
 	}
-	
-	/*//detects when the robot is clicked
-	public void OnPointerDown(PointerEventData eventData)
-    {
-		AttackPLants();
-    }*/
 	
 	
 	//notices when a grown plant is within the robots detection radius
@@ -94,22 +78,41 @@ public abstract class PestManager2 : MonoBehaviour
 				{
 					cooldown = true;
 					destination = target.transform.position;
+                    Debug.LogWarning("Plant is in Range");
+                    plantInRange = true;
 				}
 				else
-					target = null;
-					cooldown = false;
+					{
+                        plantInRange = false;
+                        Debug.LogWarning("Plant is not in Range");
+                        target = null;
+                        cooldown = false;
+                    }
 			}
             if (collision.gameObject.tag == "Player")
             {
-                chaser1InRange = true;
-				chaser2InRange = true;
+                chaserInRange = true;
+                chaser2InRange = true;
+                cooldown = true;
+                Debug.LogWarning("Player is In Range, Pest Should Flee");
             }
             else 
-                chaser1InRange = false;
-				chaser2InRange = false;
+                {
+                    cooldown = false;
+                    chaserInRange = false;
+                    chaser2InRange = false;
+                    Debug.LogWarning("Player is Not In Range, Pest Should Continute Wandering");
+
+                }
 		}
 		}
 	
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        chaserInRange = false;
+        chaser2InRange = false;
+        cooldown = false;
+    }
 	
 	//moves the robot towards its destination	
 	public void MoveTo()
@@ -123,17 +126,20 @@ public abstract class PestManager2 : MonoBehaviour
 			transform.Translate(-1 * transformPos.normalized * Time.deltaTime * speed);
 		}
 		
-		
+		//to be replaced with collect later
 		if(CheckArrived())
 		{
 			destination = this.transform.position;
             if(target != null)
 			{
-				AttackPlants();
+				AttackPlants();	
 			}
-			else 
-				cooldown = false;
-				target = null;
+            else
+            {
+            target = null;
+            cooldown = false;
+            }
+            
 		}
 	}
 	
@@ -168,11 +174,8 @@ public abstract class PestManager2 : MonoBehaviour
 		cooldown = false;
 	}
 	
-	public abstract void FleePlayer1();
-
-	public abstract void FleePlayer2();
+	public abstract void Flee();
 	
 	public abstract void AttackPlants();
-	
-}
 
+}

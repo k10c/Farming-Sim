@@ -44,9 +44,15 @@ public class PestBot2 : PestManager2
 		if(target != null)
         {
                 Destroy(target.gameObject);
-				target = null;
                 Debug.LogWarning("Pest has destroyed PlantType");
                 
         }
+		else 
+        {
+            plantInRange = false;
+            target = null;
+            cooldown = false;
+        }
 	}
 }
+
