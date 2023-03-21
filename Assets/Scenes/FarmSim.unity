@@ -1501,14 +1501,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Repairs
       objectReference: {fileID: 0}
-    - target: {fileID: 4433166910620722662, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5822776485904154959, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 817d18ee34acc20409adb9f8b124b687, type: 3}
 --- !u!1001 &4531765706077342480
